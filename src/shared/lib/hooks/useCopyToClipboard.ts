@@ -1,3 +1,5 @@
+"use client"
+
 import { useCallback, useState, useEffect } from "react";
 
 export const useCopyToClipboard = () => {

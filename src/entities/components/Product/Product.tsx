@@ -1,3 +1,5 @@
+"use client"
+
 import { FC, useState } from "react";
 import styles from "./Product.module.scss";
 import { Button, Text } from "../../../shared";
