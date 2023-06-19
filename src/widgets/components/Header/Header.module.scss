@@ -1,0 +1,23 @@
+.header {
+  // background: rgba($color: #333, $alpha: 0.1);
+  position: relative;
+  z-index: 1;
+  transition: all 0.2s ease-in-out;
+
+  .cont {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    align-items: center;
+    height: 100px;
+  }
+}
+
+.lang {
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    width: 100px;
+    height: 35px;
+  }
+}

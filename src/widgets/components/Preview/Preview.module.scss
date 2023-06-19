@@ -1,0 +1,45 @@
+.preview {
+    margin-top: 100px !important;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 600px;
+      height: 800px;
+  
+      background: url("/right_background.png") no-repeat;
+      background-size: contain;
+      transform: rotate(90deg);
+      z-index: -1;
+      opacity: 0.6;
+    }
+  
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 400px;
+      height: 800px;
+  
+      background: url("/right_background.png") no-repeat;
+      background-size: contain;
+      // transform: rotate(90deg);
+      z-index: -1;
+      opacity: 0.6;
+    }
+  
+    @media (max-width: 1200px) {
+      grid-template-columns: 1fr;
+    }
+  
+    button {
+      width: 300px;
+    }
+  }
+  

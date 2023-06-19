@@ -1,0 +1,67 @@
+
+.btn {
+  height: 50px;
+  border: 0;
+
+  background: transparent;
+  cursor: pointer;
+  padding: 0 16px;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+
+  position: relative;
+  opacity: 0.5;
+  cursor: not-allowed;
+
+  transition: all 0.2s ease-in-out;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &.active {
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  &.def {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
+.primary {
+  background-image: linear-gradient(
+    to right,
+    #ea8d41,
+    #ec8343,
+    #ed7847,
+    #ed6e4b,
+    #ec6350
+  );
+
+  @media (min-width: 600px) {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.default {
+  // background-color: $basic_grey;
+  border: 1px solid gray;
+
+  @media (min-width: 600px) {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

@@ -1,0 +1,163 @@
+.about {
+  margin-top: 100px !important;
+  background: rgba($color: #090f11, $alpha: 0.5);
+  padding: 60px 0;
+  position: relative;
+  border-radius: 10px;
+
+  h1 {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+
+    span {
+      opacity: 0;
+      transform: scale(0);
+      transition: all 0.2s ease-in-out;
+      position: absolute;
+
+      text-transform: uppercase;
+      background: linear-gradient(45deg, #edc667 30%, #8da0ba);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      &.active {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+
+  h3 {
+    width: 800px;
+    margin: 0 auto;
+
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    opacity: 0.6;
+
+    span {
+      opacity: 0;
+      transform: scale(0);
+      transition: all 0.2s ease-in-out;
+      position: absolute;
+
+      &.active {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10px;
+    right: 10px;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      #878787,
+      #b9b9b9,
+      #b9b9b9,
+      #b9b9b9,
+      #b9b9b9,
+      #878787,
+      transparent
+    );
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      #878787,
+      #b9b9b9,
+      #b9b9b9,
+      #b9b9b9,
+      #b9b9b9,
+      #878787,
+      transparent
+    );
+  }
+
+  .icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100px;
+      cursor: pointer;
+
+      @media (min-width: 600px) {
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
+
+.img {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 1000px;
+    background: url("/orc_background.png") no-repeat;
+    pointer-events: none;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 1000px;
+    background: url("/human_background.png") no-repeat;
+    pointer-events: none;
+  }
+
+  .lines {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 500px;
+      height: 1000px;
+      background: url("/bottom_background.png") no-repeat;
+      pointer-events: none;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 400px;
+      height: 1000px;
+      background: url("/center_background.png") no-repeat;
+      pointer-events: none;
+      z-index: -1;
+    }
+  }
+}

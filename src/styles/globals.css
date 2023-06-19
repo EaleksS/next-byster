@@ -1,0 +1,22 @@
+body {
+  background: url("/bg.webp") #101218 no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input {
+  font-family: "Titillium Web", sans-serif !important;
+}
