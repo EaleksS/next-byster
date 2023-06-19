@@ -1,10 +1,11 @@
-"use client"
+"use client";
 
 import { FC, useState } from "react";
 import styles from "./Product.module.scss";
 import { Button, Text } from "../../../shared";
 import { Modal } from "../..";
 import { IoClose } from "react-icons/io5";
+import Image from "next/image";
 
 export const Product: FC = (): JSX.Element => {
   const [isActive, setIsActive] = useState<boolean>(false);
@@ -12,10 +13,7 @@ export const Product: FC = (): JSX.Element => {
   return (
     <>
       <div className={styles.product} onClick={() => setIsActive(true)}>
-        <img
-          src="https://sun5-8.userapi.com/impg/HixCksIqomq91FWZGOVbRhnbllAPaep4G26xDw/12QOSLDlCH0.jpg?size=500x0&quality=90&sign=2076d77f0aa6231319aec944acf84173"
-          alt="product"
-        />
+        <Image src="/12QOSLDlCH0.jpg" alt="product" width={500} height={500} />
         <div className={styles.content}>
           <Text type="h3" center up>
             PvP
@@ -32,9 +30,11 @@ export const Product: FC = (): JSX.Element => {
             onClick={() => setIsActive(false)}
           ></IoClose>
           <div className={styles.img}>
-            <img
-              src="https://sun5-8.userapi.com/impg/HixCksIqomq91FWZGOVbRhnbllAPaep4G26xDw/12QOSLDlCH0.jpg?size=500x0&quality=90&sign=2076d77f0aa6231319aec944acf84173"
-              alt="img"
+            <Image
+              src="/12QOSLDlCH0.jpg"
+              alt="product"
+              width={500}
+              height={500}
             />
           </div>
           <div className={styles.content}>
