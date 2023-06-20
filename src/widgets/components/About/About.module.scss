@@ -121,7 +121,7 @@
     left: 0;
     width: 250px;
     height: 1000px;
-    background: url("/orc_background.png") no-repeat;
+    background: url("/orc_background.webp") no-repeat;
     pointer-events: none;
   }
 
@@ -132,7 +132,7 @@
     right: 0;
     width: 250px;
     height: 1000px;
-    background: url("/human_background.png") no-repeat;
+    background: url("/human_background.webp") no-repeat;
     pointer-events: none;
   }
 
@@ -144,7 +144,7 @@
       left: 0;
       width: 500px;
       height: 1000px;
-      background: url("/bottom_background.png") no-repeat;
+      background: url("/bottom_background.webp") no-repeat;
       pointer-events: none;
     }
 
@@ -155,7 +155,7 @@
       right: 0;
       width: 400px;
       height: 1000px;
-      background: url("/center_background.png") no-repeat;
+      background: url("/center_background.webp") no-repeat;
       pointer-events: none;
       z-index: -1;
     }
