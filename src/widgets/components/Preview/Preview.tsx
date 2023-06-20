@@ -4,6 +4,7 @@ import { FC, useEffect, useRef } from "react";
 import styles from "./Preview.module.scss";
 import { Button, Text } from "@/shared";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export const Preview: FC = (): JSX.Element => {
   const img1 = useRef<HTMLImageElement>(null);
@@ -48,17 +49,22 @@ export const Preview: FC = (): JSX.Element => {
           Попробовать бесплатно
         </Button>
       </motion.div>
-      <div className={styles.img}>
-        <motion.img
+      <motion.div
+        className={styles.img}
+        initial={{ y: -200, opacity: 0, scale: 0 }}
+        animate={{ y: 0, opacity: 1, scale: 1 }}
+        transition={{ delay: 0.5 }}
+      >
+        <Image
+          priority
           ref={img1}
-          src="/pre.webp"
+          src="/pre.png"
           alt="img"
           className={styles.bg}
-          initial={{ y: -200, opacity: 0, scale: 0 }}
-          animate={{ y: 0, opacity: 1, scale: 1 }}
-          transition={{ delay: 0.5 }}
+          width={600}
+          height={600}
         />
-      </div>
+      </motion.div>
     </div>
   );
 };
