@@ -9,7 +9,7 @@ export const About: FC = (): JSX.Element => {
   const [active, setActive] = useState<string>("convenience");
 
   return (
-    <div className={styles.img}>
+    <div className={styles.img} id="about">
       <div className={styles.lines}></div>
       <div className={`container ${styles.about}`}>
         <div className={styles.icons}>

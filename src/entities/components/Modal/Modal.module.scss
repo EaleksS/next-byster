@@ -1,5 +1,3 @@
-
-
 .modal {
   position: fixed;
   top: 0;
@@ -10,8 +8,6 @@
   align-items: center;
   justify-content: center;
 
-  backdrop-filter: blur(1rem);
-
   opacity: 0;
   pointer-events: none;
 
@@ -20,6 +16,10 @@
   &.active {
     opacity: 1;
     pointer-events: all;
+  }
+
+  &.bg {
+    backdrop-filter: blur(1rem);
   }
 
   .content {

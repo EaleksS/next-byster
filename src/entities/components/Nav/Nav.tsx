@@ -1,23 +1,36 @@
-import { FC } from "react";
+"use client";
+
+import { Dispatch, FC, SetStateAction } from "react";
 import styles from "./Nav.module.scss";
 import { Text } from "../../../shared";
 import { FaVk, FaYoutube } from "react-icons/fa";
+import { Link } from "react-scroll";
 
-export const Nav: FC = (): JSX.Element => {
+interface Props {
+  setIsActive: Dispatch<SetStateAction<boolean>>;
+}
+
+export const Nav: FC<Props> = ({ setIsActive }): JSX.Element => {
   return (
     <nav className={styles.nav}>
       <ul className={styles.ul}>
         <li>
-          <Text type="h3">Главная</Text>
+          <Link to="main" smooth={true}>
+            <Text type="h3">Главная</Text>
+          </Link>
         </li>
-        <li>
+        <li onClick={() => setIsActive((prev) => !prev)}>
           <Text type="h3">Наши читы</Text>
         </li>
         <li>
-          <Text type="h3">О нас</Text>
+          <Link to="about" smooth={true}>
+            <Text type="h3">О нас</Text>
+          </Link>
         </li>
         <li>
-          <Text type="h3">Отзывы</Text>
+          <Link to="reviews" smooth={true}>
+            <Text type="h3">Отзывы</Text>
+          </Link>
         </li>
         <li className={styles.icons}>
           <FaVk className={`${styles.icon} ${styles.vk}`} />

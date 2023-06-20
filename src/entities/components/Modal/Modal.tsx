@@ -7,6 +7,7 @@ interface Props {
   children: ReactNode;
   zIndex?: number;
   close?: boolean;
+  bg?: boolean
 }
 
 export const Modal: FC<Props> = ({
@@ -15,10 +16,11 @@ export const Modal: FC<Props> = ({
   children,
   zIndex = 4,
   close = false,
+  bg = true
 }): JSX.Element => {
   return (
     <div
-      className={`${styles.modal} ${isActive && styles.active}`}
+      className={`${styles.modal} ${isActive && styles.active} ${bg && styles.bg}`}
       style={{ zIndex: zIndex }}
       onClick={() => !close && setIsActive(false)}
     >

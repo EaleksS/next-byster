@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC, useEffect, useRef } from "react";
+import { FC, useEffect, useRef } from "react";
 import styles from "./Preview.module.scss";
 import { Button, Text } from "@/shared";
 import { motion } from "framer-motion";

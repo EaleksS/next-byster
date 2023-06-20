@@ -19,6 +19,13 @@
   font-size: 16px;
   line-height: 30px;
   /* identical to box height */
+
+  span {
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #edc667 30%, #8da0ba);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 .p {

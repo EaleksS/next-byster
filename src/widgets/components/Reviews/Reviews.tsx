@@ -4,7 +4,7 @@ import { Text } from "@/shared";
 
 export const Reviews: FC = (): JSX.Element => {
   return (
-    <div className={`container`}>
+    <div className={`container`} id="reviews">
       <Text type="h2" center mt="100px">
         Отзывы
       </Text>
