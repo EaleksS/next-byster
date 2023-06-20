@@ -1,12 +1,20 @@
-import { FC } from "react";
+"use client";
+
+import { FC, useEffect, useRef } from "react";
 import styles from "./Preview.module.scss";
 import { Button, Text } from "@/shared";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export const Preview: FC = (): JSX.Element => {
   return (
     <div className={`${styles.preview} container`}>
-      <div className={styles.title}>
+      <motion.div
+        className={styles.title}
+        initial={{ y: -200, opacity: 0, scale: 0 }}
+        animate={{ y: 0, opacity: 1, scale: 1 }}
+        transition={{ delay: 0.5 }}
+      >
         <Text type="h1" color="#fbb531">
           Byster - Авто PvE и PvP
         </Text>
@@ -23,10 +31,15 @@ export const Preview: FC = (): JSX.Element => {
         <Button mt="3rem" type="primary" radius="10px">
           Попробовать бесплатно
         </Button>
-      </div>
-      <div>
+      </motion.div>
+      <motion.div
+        className={styles.img}
+        initial={{ y: -200, opacity: 0, scale: 0 }}
+        animate={{ y: 0, opacity: 1, scale: 1 }}
+        transition={{ delay: 0.5 }}
+      >
         <Image priority src="/pre.png" alt="img" width={600} height={600} />
-      </div>
+      </motion.div>
     </div>
   );
 };
