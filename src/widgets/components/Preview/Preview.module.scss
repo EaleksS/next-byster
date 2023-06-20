@@ -36,6 +36,19 @@
 
   @media (max-width: 1200px) {
     grid-template-columns: 1fr;
+    padding: 0 10px;
+
+    .img {
+      display: none;
+    }
+
+    &::after {
+      display: none;
+    }
+
+    &::before {
+      display: none;
+    }
   }
 
   button {

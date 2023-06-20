@@ -29,13 +29,18 @@
   }
 
   h3 {
-    width: 800px;
+    max-width: 800px;
     margin: 0 auto;
 
     height: 100px;
     display: flex;
     justify-content: center;
     opacity: 0.6;
+
+    @media (max-width: 800px) {
+      max-width: auto;
+      height: 200px;
+    }
 
     span {
       opacity: 0;
@@ -95,6 +100,7 @@
     gap: 20px;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 
     img {
       width: 100px;
@@ -136,6 +142,16 @@
     pointer-events: none;
   }
 
+  @media (max-width: 1200px) {
+    &::after {
+      display: none;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+
   .lines {
     &::after {
       content: "";
@@ -158,6 +174,16 @@
       background: url("/center_background.webp") no-repeat;
       pointer-events: none;
       z-index: -1;
+    }
+
+    @media (max-width: 1200px) {
+      &::after {
+        display: none;
+      }
+
+      &::before {
+        display: none;
+      }
     }
   }
 }
