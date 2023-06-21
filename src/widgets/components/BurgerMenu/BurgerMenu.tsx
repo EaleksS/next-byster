@@ -33,12 +33,14 @@ export const BurgerMenu: FC<Props> = ({
 
   return (
     <Modal isActive={isActive} setIsActive={setIsActive} zIndex={2}>
-      <div className={styles.burger_menu}>
-        <nav className={styles.nav}>
+      <div className={styles.burger_menu} onClick={() => setIsActive(false)}>
+        <nav className={styles.nav} onClick={(e) => e.stopPropagation()}>
           <ul className={styles.ul}>
             <li>
-              <Link to="main" smooth={true}>
-                <Text type="h2">Главная</Text>
+              <Link to="wrapper" smooth={true}>
+                <Text center type="h3" fz="20px">
+                  Главная
+                </Text>
               </Link>
             </li>
             <li
@@ -47,17 +49,29 @@ export const BurgerMenu: FC<Props> = ({
                 setIsActive(false);
               }}
             >
-              <Text type="h2">Наши читы</Text>
+              <Text center type="h3" fz="20px">
+                Наши читы
+              </Text>
             </li>
             <li>
               <Link to="about" smooth={true}>
-                <Text type="h2">О нас</Text>
+                <Text center type="h3" fz="20px">
+                  О нас
+                </Text>
               </Link>
             </li>
             <li>
               <Link to="reviews" smooth={true}>
-                <Text type="h2">Отзывы</Text>
+                <Text center type="h3" fz="20px">
+                  Отзывы
+                </Text>
               </Link>
+            </li>
+            <li className={styles.icons}>
+              <FaVk className={`${styles.icon} ${styles.vk}`} />
+            </li>
+            <li className={styles.icons}>
+              <FaYoutube className={`${styles.icon} ${styles.yt}`} />
             </li>
           </ul>
         </nav>
