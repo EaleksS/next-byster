@@ -2,7 +2,7 @@
 
 import React from "react";
 
-export const useWindowDimension = () => {
+export const useWindowDimensions = () => {
   const [width, setWidth] = React.useState<number>(
     global.window && window.innerWidth
   );
