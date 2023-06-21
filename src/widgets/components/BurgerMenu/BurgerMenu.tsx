@@ -36,7 +36,7 @@ export const BurgerMenu: FC<Props> = ({
       <div className={styles.burger_menu} onClick={() => setIsActive(false)}>
         <nav className={styles.nav} onClick={(e) => e.stopPropagation()}>
           <ul className={styles.ul}>
-            <li>
+            <li onClick={() => setIsActive(false)}>
               <Link to="wrapper" smooth={true}>
                 <Text center type="h3" fz="20px">
                   Главная
@@ -53,24 +53,24 @@ export const BurgerMenu: FC<Props> = ({
                 Наши читы
               </Text>
             </li>
-            <li>
+            <li onClick={() => setIsActive(false)}>
               <Link to="about" smooth={true}>
                 <Text center type="h3" fz="20px">
                   О нас
                 </Text>
               </Link>
             </li>
-            <li>
+            <li onClick={() => setIsActive(false)}>
               <Link to="reviews" smooth={true}>
                 <Text center type="h3" fz="20px">
                   Отзывы
                 </Text>
               </Link>
             </li>
-            <li className={styles.icons}>
+            <li className={styles.icons} onClick={() => setIsActive(false)}>
               <FaVk className={`${styles.icon} ${styles.vk}`} />
             </li>
-            <li className={styles.icons}>
+            <li className={styles.icons} onClick={() => setIsActive(false)}>
               <FaYoutube className={`${styles.icon} ${styles.yt}`} />
             </li>
           </ul>
