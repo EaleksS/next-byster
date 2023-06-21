@@ -12,7 +12,7 @@ export const Product: FC = (): JSX.Element => {
   const { width, height } = useWindowDimensions();
 
   useEffect(() => {
-    if (isActive && width < 900) {
+    if (isActive && width < 900 && window) {
       document.body.style.overflowY = "hidden";
     } else {
       document.body.style.overflowY = "auto";

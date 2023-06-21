@@ -25,7 +25,7 @@ export const Header: FC = (): JSX.Element => {
         />
         <OurCheats isActive={isActive} setIsActive={setIsActive} />
 
-        {width < 1200 ? (
+        {window && width < 1200 ? (
           <div className={styles.lang}>
             <Burger isActive={isActiveBurger} setIsActive={setIsActiveBurger} />
           </div>

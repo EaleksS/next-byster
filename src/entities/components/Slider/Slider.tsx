@@ -32,7 +32,7 @@ export const Slider: FC = (): JSX.Element => {
       <Swiper
         onSwiper={(s) => setSwiper(s)}
         onSlideChange={() => isActice()}
-        slidesPerView={width < 900 ? 2 : 3}
+        slidesPerView={window && width < 900 ? 2 : 3}
         pagination={true}
         modules={[Pagination, Autoplay]}
         className="mySwiper"
