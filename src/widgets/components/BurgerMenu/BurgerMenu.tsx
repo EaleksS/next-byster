@@ -19,8 +19,17 @@ export const BurgerMenu: FC<Props> = ({
   useEffect(() => {
     if (isActive) {
       document.body.style.overflowY = "hidden";
+      document.body.addEventListener("touchmove", (e) => e.preventDefault());
+
+      return () =>
+        document.body.removeEventListener("touchmove", (e) =>
+          e.preventDefault()
+        );
     } else {
       document.body.style.overflowY = "auto";
+      document.body.addEventListener("touchmove", (e) => "");
+
+      return () => document.body.removeEventListener("touchmove", (e) => "");
     }
   }, [isActive]);
 
