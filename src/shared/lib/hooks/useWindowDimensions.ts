@@ -2,26 +2,24 @@
 
 import React from "react";
 
-export const useWindowDimensions = () => {
+export const useWindowDimension = () => {
   const [width, setWidth] = React.useState<number>(
-    typeof window !== undefined ? window.innerWidth : 0
+    global.window && window.innerWidth
   );
   const [height, setHeight] = React.useState<number>(
-    typeof window !== undefined ? window.innerHeight : 0
+    global.window && window.innerHeight
   );
 
   const updateWidthAndHeight = () => {
-    setWidth(typeof window !== undefined ? window.innerWidth : 0);
-    setHeight(typeof window !== undefined ? window.innerHeight : 0);
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
   };
 
   React.useEffect(() => {
-    if (typeof window === undefined) return;
-
-    window && window.addEventListener("resize", updateWidthAndHeight);
-    
+    global.window && window.addEventListener("resize", updateWidthAndHeight);
     return () =>
-      window && window.removeEventListener("resize", updateWidthAndHeight);
+      global.window &&
+      window.removeEventListener("resize", updateWidthAndHeight);
   }, []);
 
   return {
