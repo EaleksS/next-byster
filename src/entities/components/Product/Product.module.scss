@@ -68,11 +68,23 @@
     z-index: 5;
   }
 
+  @media (max-width: 900px) {
+    width: calc(100%);
+    height: 100%;
+    overflow: auto;
+    padding: 0;
+  }
+
   .container {
     gap: 1rem;
 
     display: grid;
     grid-template-columns: 1fr 3.5fr;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+      padding: 20px;
+    }
 
     .img {
       overflow: hidden;
@@ -83,6 +95,11 @@
         object-fit: cover;
         border-radius: 10px;
         cursor: pointer;
+
+        @media (max-width: 900px) {
+          width: 200px;
+          height: 200px;
+        }
 
         @media (min-width: 600px) {
           transition: all 0.5s ease-in-out;
@@ -121,5 +138,9 @@
   .slider {
     position: relative;
     margin: 0 30px;
+
+    @media (max-width: 900px) {
+      padding-bottom: 20px;
+    }
   }
 }

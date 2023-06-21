@@ -45,14 +45,14 @@
   color: #fff;
   cursor: pointer;
 
-  @media (max-width: 1200px) {
-    height: 70px;
-    width: 70px;
-  }
+  // @media (max-width: 1200px) {
+  //   height: 70px;
+  //   width: 70px;
+  // }
 
-  @media (max-width: 800px) {
-    display: none;
-  }
+  // @media (max-width: 800px) {
+  //   // display: none;
+  // }
 
   &:active {
     transform: scale(0.95);

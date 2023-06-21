@@ -27,6 +27,11 @@
 
     transition: all 0.2s ease-in-out;
 
+    @media (max-width: 900px) {
+      width: 100vw;
+      height: 100vh;
+    }
+
     &.active {
       transform: translateX(0);
     }

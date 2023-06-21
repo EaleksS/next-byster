@@ -10,7 +10,7 @@
 
   .cont {
     display: grid;
-    grid-template-columns: 100px 1fr 200px;
+    grid-template-columns: 100px 1fr 100px;
     align-items: center;
     height: 100px;
 
@@ -22,9 +22,10 @@
 .lang {
   display: flex;
   justify-content: flex-end;
+  position: relative;
+  z-index: 3;
 
   button {
-    width: 100px;
     height: 35px;
   }
 }

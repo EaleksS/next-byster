@@ -6,6 +6,10 @@
   border-radius: 10px;
   padding: 1rem;
 
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+
   @media (min-width: 600px) {
     &:hover {
       .bg {

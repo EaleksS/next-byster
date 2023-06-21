@@ -11,10 +11,11 @@ import { MdPlayArrow } from "react-icons/md";
 
 import { SwiperType } from "../../types/Swiper";
 import Image from "next/image";
+import { useWindowDimensions } from "@/shared";
 
 export const Slider: FC = (): JSX.Element => {
   const [swiper, setSwiper] = useState<SwiperType>();
-
+  const { width } = useWindowDimensions();
   const [prevActive, setPrevActive] = useState(true);
   const [nextActive, setNextActive] = useState(false);
 
@@ -31,7 +32,7 @@ export const Slider: FC = (): JSX.Element => {
       <Swiper
         onSwiper={(s) => setSwiper(s)}
         onSlideChange={() => isActice()}
-        slidesPerView={3}
+        slidesPerView={width < 900 ? 2 : 3}
         pagination={true}
         modules={[Pagination, Autoplay]}
         className="mySwiper"

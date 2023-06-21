@@ -29,9 +29,11 @@ export const OurCheats: FC<Props> = ({
           className={styles.close}
           onClick={() => setIsActive(false)}
         ></IoClose>
-        {[1, 2, 3].map((e) => (
-          <Cheats key={e} />
-        ))}
+        <div className={styles.items}>
+          {[1, 2, 3].map((e) => (
+            <Cheats key={e} />
+          ))}
+        </div>
       </div>
     </Modal>
   );

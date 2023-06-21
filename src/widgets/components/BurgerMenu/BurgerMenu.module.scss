@@ -1,0 +1,20 @@
+.burger_menu {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #101218;
+
+  ul {
+    flex-direction: column;
+
+    li {
+      font-size: 2rem !important;
+    }
+
+    ol {
+      font-size: 2rem !important;
+    }
+  }
+}

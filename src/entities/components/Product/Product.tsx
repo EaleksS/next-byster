@@ -1,14 +1,23 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import styles from "./Product.module.scss";
-import { Button, Text } from "../../../shared";
+import { Button, Text, useWindowDimensions } from "../../../shared";
 import { Modal, Slider } from "../..";
 import { IoClose } from "react-icons/io5";
 import Image from "next/image";
 
 export const Product: FC = (): JSX.Element => {
   const [isActive, setIsActive] = useState<boolean>(false);
+  const { width, height } = useWindowDimensions();
+
+  useEffect(() => {
+    if (isActive && width < 900) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "auto";
+    }
+  }, [isActive, width]);
 
   return (
     <>
@@ -74,7 +83,9 @@ export const Product: FC = (): JSX.Element => {
               </div>
             </div>
           </div>
-          <div className={styles.slider}><Slider /></div>
+          <div className={styles.slider}>
+            <Slider />
+          </div>
         </div>
       </Modal>
     </>

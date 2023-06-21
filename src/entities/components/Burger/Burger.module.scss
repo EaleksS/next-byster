@@ -1,0 +1,44 @@
+.burger_menu {
+  position: relative;
+  width: 2rem;
+  height: 1.5rem;
+  user-select: none;
+  display: block;
+
+  .l1,
+  .l2,
+  .l3 {
+    position: absolute;
+    height: 1px;
+    width: 2rem;
+    border-top: 1px solid #fff;
+    left: 0;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .l1 {
+    top: 0;
+  }
+
+  .l2 {
+    top: calc(50% - 1px);
+  }
+
+  .l3 {
+    bottom: 0;
+  }
+
+  &.active {
+    .l1 {
+      transform: translateY(0.7rem) rotate(-45deg);
+    }
+
+    .l2 {
+      opacity: 0;
+    }
+
+    .l3 {
+      transform: translateY(-0.7rem) rotate(45deg);
+    }
+  }
+}
