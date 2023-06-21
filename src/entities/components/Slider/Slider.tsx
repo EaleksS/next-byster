@@ -39,12 +39,14 @@ export const Slider: FC = (): JSX.Element => {
       >
         {[1, 2, 3, 4].map((e) => (
           <SwiperSlide key={e}>
-            <Image
-              src="/12QOSLDlCH0.jpg"
-              alt="product"
-              width={500}
-              height={500}
-            />
+            <div className="img-slider">
+              <Image
+                src="/12QOSLDlCH0.jpg"
+                alt="product"
+                width={500}
+                height={500}
+              />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
