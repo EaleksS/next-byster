@@ -32,7 +32,7 @@ export const Preview: FC = (): JSX.Element => {
         animate={{ y: 0, opacity: 1, scale: 1 }}
         transition={{ delay: 0.5 }}
       >
-        <Text type="h1" color="#fbb531">
+        <Text type="h1" up fw="600">
           Byster - Авто PvE и PvP
         </Text>
         <Text type="h3" mt="3rem" fw="400">

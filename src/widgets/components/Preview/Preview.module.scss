@@ -51,7 +51,29 @@
     }
   }
 
+  h1 {
+    background: #fdbc2f;
+    background: linear-gradient(to right, #fdbc2f 0%, #f87b6a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @media (min-width: 500px) {
+      white-space: nowrap;
+    }
+    @media (max-width: 500px) {
+      text-align: center !important;
+    }
+  }
+
+  h3 {
+    @media (max-width: 500px) {
+      text-align: center !important;
+    }
+  }
+
   button {
-    width: 300px;
+    @media (min-width: 500px) {
+      width: 300px;
+    }
   }
 }

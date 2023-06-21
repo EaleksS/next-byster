@@ -28,4 +28,19 @@
   button {
     height: 35px;
   }
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.burger {
+  display: none;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 3;
+
+  @media (max-width: 1200px) {
+    display: flex;
+  }
 }
