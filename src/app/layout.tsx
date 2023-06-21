@@ -1,10 +1,15 @@
 import { Header } from "@/widgets";
 import "../styles/globals.css";
 import "../styles/reset.min.css";
-import { Titillium_Web } from "next/font/google";
+import { Titillium_Web, Roboto } from "next/font/google";
 
 const titillium = Titillium_Web({
   weight: ["300", "400", "600", "700"],
+  subsets: ["latin"],
+});
+
+const roboto = Roboto({
+  weight: ["100", "300", "400", "700", "900"],
   subsets: ["latin"],
 });
 
@@ -20,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <body className={titillium.className}>
+      <body style={roboto.style}>
         <Header />
         {children}
       </body>
