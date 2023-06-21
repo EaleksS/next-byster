@@ -25,13 +25,13 @@ export const Header: FC = (): JSX.Element => {
         />
         <OurCheats isActive={isActive} setIsActive={setIsActive} />
 
-        { width < 1200 ? (
+        {width < 1200 ? (
           <div className={styles.lang}>
             <Burger isActive={isActiveBurger} setIsActive={setIsActiveBurger} />
           </div>
         ) : (
           <div className={styles.lang}>
-            <Button radius="5px">RU</Button>
+            {/* <Button radius="5px">RU</Button> */}
           </div>
         )}
       </div>

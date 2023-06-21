@@ -34,7 +34,7 @@ export const BurgerMenu: FC<Props> = ({
           <ul className={styles.ul}>
             <li>
               <Link to="main" smooth={true}>
-                <Text type="h3">Главная</Text>
+                <Text type="h2">Главная</Text>
               </Link>
             </li>
             <li
@@ -43,16 +43,16 @@ export const BurgerMenu: FC<Props> = ({
                 setIsActive(false);
               }}
             >
-              <Text type="h3">Наши читы</Text>
+              <Text type="h2">Наши читы</Text>
             </li>
             <li>
               <Link to="about" smooth={true}>
-                <Text type="h3">О нас</Text>
+                <Text type="h2">О нас</Text>
               </Link>
             </li>
             <li>
               <Link to="reviews" smooth={true}>
-                <Text type="h3">Отзывы</Text>
+                <Text type="h2">Отзывы</Text>
               </Link>
             </li>
           </ul>

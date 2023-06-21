@@ -8,13 +8,7 @@
 
   ul {
     flex-direction: column;
-
-    li {
-      font-size: 2rem !important;
-    }
-
-    ol {
-      font-size: 2rem !important;
-    }
+    display: flex;
+    gap: 1rem;
   }
 }
