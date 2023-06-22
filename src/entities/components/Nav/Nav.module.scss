@@ -64,8 +64,20 @@
   justify-content: center;
   gap: 10px;
 
+  &:hover {
+    opacity: 1 !important;
+  }
+
   .icon {
     font-size: 25px;
+
+    @media (min-width: 800px) {
+      transform: all 0.2s ease-in-out;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
 
     &.vk {
       color: #4c75a3;

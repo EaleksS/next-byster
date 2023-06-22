@@ -16,26 +16,32 @@ export const Nav: FC<Props> = ({ setIsActive }): JSX.Element => {
       <ul className={styles.ul}>
         <li>
           <Link to="main" smooth={true}>
-            <Text type="h3" up>Главная</Text>
+            <Text type="h3" up>
+              Главная
+            </Text>
           </Link>
         </li>
         <li onClick={() => setIsActive((prev) => !prev)}>
-          <Text type="h3" up>Наши читы</Text>
+          <Text type="h3" up>
+            Наши читы
+          </Text>
         </li>
         <li>
           <Link to="about" smooth={true}>
-            <Text type="h3" up>О нас</Text>
+            <Text type="h3" up>
+              О нас
+            </Text>
           </Link>
         </li>
         <li>
           <Link to="reviews" smooth={true}>
-            <Text type="h3" up>Отзывы</Text>
+            <Text type="h3" up>
+              Отзывы
+            </Text>
           </Link>
         </li>
         <li className={styles.icons}>
           <FaVk className={`${styles.icon} ${styles.vk}`} />
-        </li>
-        <li className={styles.icons}>
           <FaYoutube className={`${styles.icon} ${styles.yt}`} />
         </li>
       </ul>

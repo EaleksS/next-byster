@@ -2,7 +2,22 @@
   padding: 100px 0;
   position: relative;
 
+  h2 {
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #edc667 30%, #8da0ba);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @media (min-width: 500px) {
+      white-space: nowrap;
+    }
+    @media (max-width: 500px) {
+      text-align: center !important;
+    }
+  }
+
   .btns {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     gap: 1rem;

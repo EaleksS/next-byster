@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction, useEffect } from "react";
+import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
 import styles from "./BurgerMenu.module.scss";
 import { Modal, Nav } from "../../../entities";
 import { Link } from "react-scroll";
@@ -30,6 +30,8 @@ export const BurgerMenu: FC<Props> = ({
       document.body.style.overflowY = "auto";
     }
   }, [isActive]);
+
+  const [isLang, setIsLang] = useState<string>("ru");
 
   return (
     <Modal isActive={isActive} setIsActive={setIsActive} zIndex={2}>
@@ -80,6 +82,23 @@ export const BurgerMenu: FC<Props> = ({
             </li>
             <li className={styles.icons} onClick={() => setIsActive(false)}>
               <FaYoutube className={`${styles.icon} ${styles.yt}`} />
+            </li>
+            <li>
+              <div className={styles.lang}>
+                <span
+                  onClick={() => setIsLang("ru")}
+                  className={isLang === "ru" ? styles.active : ""}
+                >
+                  RU
+                </span>
+                /
+                <span
+                  onClick={() => setIsLang("en")}
+                  className={isLang !== "ru" ? styles.active : ""}
+                >
+                  EN
+                </span>
+              </div>
             </li>
           </ul>
         </nav>

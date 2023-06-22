@@ -2,7 +2,7 @@
 
 import { FC, useState } from "react";
 import styles from "./Products.module.scss";
-import { Button } from "@/shared";
+import { Button, Text } from "@/shared";
 import { Product } from "@/entities";
 
 export const Products: FC = (): JSX.Element => {
@@ -10,6 +10,9 @@ export const Products: FC = (): JSX.Element => {
 
   return (
     <div className={`container ${styles.products}`}>
+      <Text type="h2" up center>
+        <span>Список наших ротаций</span>
+      </Text>
       <div className={styles.btns}>
         <Button
           type={active === "pvp" ? "primary" : "default"}

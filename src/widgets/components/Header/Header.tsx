@@ -11,6 +11,8 @@ export const Header: FC = (): JSX.Element => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [isActiveBurger, setIsActiveBurger] = useState<boolean>(false);
 
+  const [isLang, setIsLang] = useState<string>("ru");
+
   return (
     <header className={styles.header}>
       <div className={`${styles.cont}`}>
@@ -26,7 +28,19 @@ export const Header: FC = (): JSX.Element => {
           <Burger isActive={isActiveBurger} setIsActive={setIsActiveBurger} />
         </div>
         <div className={styles.lang}>
-          <Button radius="5px">RU</Button>
+          <span
+            onClick={() => setIsLang("ru")}
+            className={isLang === "ru" ? styles.active : ""}
+          >
+            RU
+          </span>
+          /
+          <span
+            onClick={() => setIsLang("en")}
+            className={isLang !== "ru" ? styles.active : ""}
+          >
+            EN
+          </span>
         </div>
       </div>
     </header>
