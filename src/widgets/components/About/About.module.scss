@@ -42,11 +42,12 @@
       height: 200px;
     }
 
-    span {
+    b {
       opacity: 0;
       transform: scale(0);
       transition: all 0.2s ease-in-out;
       position: absolute;
+      font-weight: 500;
 
       &.active {
         opacity: 1;

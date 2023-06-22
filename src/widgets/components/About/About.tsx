@@ -52,33 +52,33 @@ export const About: FC = (): JSX.Element => {
           </span>
         </Text>
         <Text type="h3" mt="50px" center fw="300">
-          <span className={active === "convenience" ? styles.active : ""}>
+          <b className={active === "convenience" ? styles.active : ""}>
             Вам не нужно ничего настраивать, все уже сделано за вас, все просто
             и легко!
-          </span>
-          <span className={active === "choose" ? styles.active : ""}>
+          </b>
+          <b className={active === "choose" ? styles.active : ""}>
             Надежные и инновационные читы, тестируемые нашей командой. Удобный и
             безопасный софт с цникальными функциями для кажой игры. Поддержка и
             помощь клиентам в решении вопросов.
-          </span>
-          <span className={active === "anonymity" ? styles.active : ""}>
+          </b>
+          <b className={active === "anonymity" ? styles.active : ""}>
             Информация о наших клиентах никогда не раскрывается третьим лицам.
-          </span>
-          <span className={active === "protection" ? styles.active : ""}>
+          </b>
+          <b className={active === "protection" ? styles.active : ""}>
             Уникальная защита от любого античита как в лицензионной версии, так
             и в пиратской версии игр. Большая команда тестировщиков проверяет
             программное обеспечение на наличие банов.
-          </span>
-          <span className={active === "support" ? styles.active : ""}>
+          </b>
+          <b className={active === "support" ? styles.active : ""}>
             Опытные специалисты поддержки всегда готовы ответить на ваши вопросы
             и помочь в решении возникающих проблем.
-          </span>
-          <span className={active === "functionality" ? styles.active : ""}>
+          </b>
+          <b className={active === "functionality" ? styles.active : ""}>
             Команда разработчиков занимается созданием индивидуальных
             особенностей чита для каждой игры с авторскими функциями, которые вы
             не найдете в других проектах. Все для того что бы могли в довольно
             насладиться приятным геймплеем в вашей любимой игре
-          </span>
+          </b>
         </Text>
       </div>
     </div>
