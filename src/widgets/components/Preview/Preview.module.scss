@@ -75,5 +75,10 @@
     @media (min-width: 500px) {
       width: 300px;
     }
+
+    h3 {
+      font-weight: 600;
+      text-transform: uppercase !important;
+    }
   }
 }

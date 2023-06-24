@@ -4,18 +4,22 @@ import { Dispatch, FC, SetStateAction } from "react";
 import styles from "./Nav.module.scss";
 import { Text } from "../../../shared";
 import { FaVk, FaYoutube } from "react-icons/fa";
-import { Link } from "react-scroll";
+import { Link as LinkScroll } from "react-scroll";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface Props {
   setIsActive: Dispatch<SetStateAction<boolean>>;
 }
 
 export const Nav: FC<Props> = ({ setIsActive }): JSX.Element => {
+  const router = useRouter();
+
   return (
     <nav className={styles.nav}>
       <ul className={styles.ul}>
         <li>
-          <Link to="main" smooth={true}>
+          <Link href={"/"}>
             <Text type="h3" up>
               Главная
             </Text>
@@ -27,18 +31,18 @@ export const Nav: FC<Props> = ({ setIsActive }): JSX.Element => {
           </Text>
         </li>
         <li>
-          <Link to="about" smooth={true}>
+          <LinkScroll to="about" smooth={true}>
             <Text type="h3" up>
               О нас
             </Text>
-          </Link>
+          </LinkScroll>
         </li>
         <li>
-          <Link to="reviews" smooth={true}>
+          <LinkScroll to="reviews" smooth={true}>
             <Text type="h3" up>
               Отзывы
             </Text>
-          </Link>
+          </LinkScroll>
         </li>
         <li className={styles.icons}>
           <FaVk className={`${styles.icon} ${styles.vk}`} />

@@ -5,9 +5,12 @@ import styles from "./Preview.module.scss";
 import { Button, Text } from "@/shared";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export const Preview: FC = (): JSX.Element => {
   const img1 = useRef<HTMLImageElement>(null);
+
+  const router = useRouter();
 
   const parallax = (e: MouseEvent) => {
     if (!img1.current) return;
@@ -45,7 +48,12 @@ export const Preview: FC = (): JSX.Element => {
           Жми на кнопку ниже!
         </Text>
 
-        <Button mt="3rem" type="primary" radius="10px">
+        <Button
+          mt="3rem"
+          type="primary"
+          radius="10px"
+          onClick={() => router.push("/download")}
+        >
           Попробовать бесплатно
         </Button>
       </motion.div>
