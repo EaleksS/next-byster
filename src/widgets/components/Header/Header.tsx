@@ -3,13 +3,15 @@
 import React, { FC, useState } from "react";
 import styles from "./Header.module.scss";
 import { Burger, Logo, Nav } from "@/entities";
-import { Button, Text, useWindowDimensions } from "@/shared";
 import { OurCheats } from "../OurCheats/OurCheats";
 import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
+import { useRouter } from "next/navigation";
 
 export const Header: FC = (): JSX.Element => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [isActiveBurger, setIsActiveBurger] = useState<boolean>(false);
+
+  const { push } = useRouter();
 
   const [isLang, setIsLang] = useState<string>("ru");
 
@@ -29,14 +31,14 @@ export const Header: FC = (): JSX.Element => {
         </div>
         <div className={styles.lang}>
           <span
-            onClick={() => setIsLang("ru")}
+            onClick={() => push("/", undefined, { locale: "ru" })}
             className={isLang === "ru" ? styles.active : ""}
           >
             RU
           </span>
           /
           <span
-            onClick={() => setIsLang("en")}
+            onClick={() => push("/", undefined, { locale: "en" })}
             className={isLang !== "ru" ? styles.active : ""}
           >
             EN

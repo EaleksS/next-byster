@@ -31,14 +31,22 @@ export const Nav: FC<Props> = ({ setIsActive }): JSX.Element => {
           </Text>
         </li>
         <li>
-          <LinkScroll to="about" smooth={true}>
+          <LinkScroll
+            to="about"
+            smooth={true}
+            onClick={() => router.push("/#about")}
+          >
             <Text type="h3" up>
               О нас
             </Text>
           </LinkScroll>
         </li>
         <li>
-          <LinkScroll to="reviews" smooth={true}>
+          <LinkScroll
+            to="reviews"
+            smooth={true}
+            onClick={() => router.push("/#reviews")}
+          >
             <Text type="h3" up>
               Отзывы
             </Text>
