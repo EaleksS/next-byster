@@ -3,9 +3,10 @@
 import { FC, useEffect, useRef } from "react";
 import styles from "./Preview.module.scss";
 import { Button, Text } from "@/shared";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 export const Preview: FC = (): JSX.Element => {
   const img1 = useRef<HTMLImageElement>(null);
@@ -27,13 +28,12 @@ export const Preview: FC = (): JSX.Element => {
     return () => document.removeEventListener("mousemove", parallax);
   }, []);
 
+  const t = useTranslations("Index");
+
   return (
     <div className={`${styles.preview} container`}>
-      <motion.div
+      <div
         className={styles.title}
-        initial={{ y: -200, opacity: 0, scale: 0 }}
-        animate={{ y: 0, opacity: 1, scale: 1 }}
-        transition={{ delay: 0.5 }}
       >
         <Text type="h1" up fw="600">
           Byster - Авто PvE и PvP
@@ -46,6 +46,7 @@ export const Preview: FC = (): JSX.Element => {
           Присутствуют функции автобафа, аое и соло режима, прожимок и дефов,
           авто-снятие оружие на леди, диспел и многое другое, заинтересовался?
           Жми на кнопку ниже!
+          {t("title")}
         </Text>
 
         <Button
@@ -56,12 +57,9 @@ export const Preview: FC = (): JSX.Element => {
         >
           Попробовать бесплатно
         </Button>
-      </motion.div>
-      <motion.div
+      </div>
+      <div
         className={styles.img}
-        initial={{ y: -200, opacity: 0, scale: 0 }}
-        animate={{ y: 0, opacity: 1, scale: 1 }}
-        transition={{ delay: 0.5 }}
       >
         <Image
           ref={img1}
@@ -71,7 +69,7 @@ export const Preview: FC = (): JSX.Element => {
           width={600}
           height={600}
         />
-      </motion.div>
+      </div>
     </div>
   );
 };

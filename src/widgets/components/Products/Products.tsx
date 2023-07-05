@@ -4,9 +4,18 @@ import { FC, useState } from "react";
 import styles from "./Products.module.scss";
 import { Button, Text } from "@/shared";
 import { Product } from "@/entities";
+import { useQuery } from "react-query";
+import { getProducts } from "@/widgets/services/products.service";
+import { IProduct } from "@/widgets/interface/products.interface";
 
 export const Products: FC = (): JSX.Element => {
   const [active, setActive] = useState<string>("pvp");
+
+  const { data, isLoading } = useQuery({
+    queryKey: ["products"],
+    queryFn: () => getProducts.getList(),
+    keepPreviousData: true,
+  });
 
   return (
     <div className={`container ${styles.products}`}>
@@ -37,9 +46,13 @@ export const Products: FC = (): JSX.Element => {
         </Button>
       </div>
       <div className={styles.items}>
-        {[1, 2, 3, 4, 5, 6, 7, 8].map((e) => (
-          <Product key={e} />
-        ))}
+        {!isLoading
+          ? data
+              .filter((filter: IProduct) =>
+                filter.name.toLowerCase().includes(active.toLowerCase())
+              )
+              .map((e: IProduct) => <Product key={e.id} {...e} />)
+          : "loading"}
       </div>
     </div>
   );

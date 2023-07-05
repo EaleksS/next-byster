@@ -1,34 +1,41 @@
 "use client";
 
-import { FC, useEffect, useState } from "react";
+import { FC, Fragment, useEffect, useState } from "react";
 import styles from "./Product.module.scss";
-import { Button, Text, useWindowDimensions } from "../../../shared";
+import { Button, Text } from "../../../shared";
 import { Modal, Slider } from "../..";
 import { IoClose } from "react-icons/io5";
 import Image from "next/image";
+import { IProduct } from "@/widgets/interface/products.interface";
 
-export const Product: FC = (): JSX.Element => {
+export const Product: FC<IProduct> = (props): JSX.Element => {
   const [isActive, setIsActive] = useState<boolean>(false);
-  const { width, height } = useWindowDimensions();
 
   useEffect(() => {
-    if (isActive && width < 900) {
+    if (isActive) {
       document.body.style.overflowY = "hidden";
     } else {
       document.body.style.overflowY = "auto";
     }
-  }, [isActive, width]);
+  }, [isActive]);
 
   return (
     <>
       <div className={styles.product} onClick={() => setIsActive(true)}>
-        <Image src="/12QOSLDlCH0.jpg" alt="product" width={500} height={500} />
+        <Image
+          src={props.image_url ? props.image_url : ""}
+          alt="product"
+          width={500}
+          height={500}
+        />
         <div className={styles.content}>
           <Text type="h3" center up>
-            PvP
+            {props.name.length < 12
+              ? props.name
+              : `${props.name.slice(0, 12)}...`}
           </Text>
           <Text type="h3" center up>
-            399 P
+            {props.price} P
           </Text>
         </div>
       </div>
@@ -42,49 +49,31 @@ export const Product: FC = (): JSX.Element => {
           <div className={styles.container}>
             <div className={styles.img}>
               <Image
-                src="/12QOSLDlCH0.jpg"
+                src={props.image_url ? props.image_url : ""}
                 alt="product"
                 width={500}
                 height={500}
               />
             </div>
             <div className={styles.content}>
-              <Text type="h3">
-                <span>Discipline Priest PvP</span> - это полностью
-                автоматизированная ротация, которая умеет следующие:
-              </Text>
+              <Text type="h3">{props.name}</Text>
               <Text mt="20px">
-                - Исцелять вас и игроков, находящихся в вашей группе или рейде
-                <br />
-                - Автоматический баффать и ребаффать при возможности
-                <br />
-                - Ассистить своим тимейтам уроном
-                <br />
-                - Автоматический используются Божественный гимн и Гимн надежды
-                (для арены)
-                <br />- Автофейк каста для того, чтобы избежать эффекта {'"'}
-                Немоты{'"'}
-                <br />
-                - Автоматический диспел союзников и врагов.
-                <br />
-                - Масс диспел, который находит сам нужную точку если
-                цельнаходится вне зоны
-                <br />
-                видимости - Масс диспел для того, чтобы войти в бой против
-                разбойника
-                <br />
-                - Автоматическое разбития тотема заземления и трепета.
-                <br />
+                {props.rotations.map((e) => (
+                  <Fragment key={e.id}>
+                    {e.description} <br />
+                    <br />
+                  </Fragment>
+                ))}
               </Text>
               <div className={styles.price}>
                 <Button type="primary" radius="10px">
-                  Купить за 399P
+                  Купить за {props.price}P
                 </Button>
               </div>
             </div>
           </div>
           <div className={styles.slider}>
-            <Slider />
+            <Slider {...props} />
           </div>
         </div>
       </Modal>

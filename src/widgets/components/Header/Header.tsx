@@ -6,12 +6,11 @@ import { Burger, Logo, Nav } from "@/entities";
 import { OurCheats } from "../OurCheats/OurCheats";
 import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
 import { useRouter } from "next/navigation";
+import Link from "next-intl/link";
 
 export const Header: FC = (): JSX.Element => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [isActiveBurger, setIsActiveBurger] = useState<boolean>(false);
-
-  const { push } = useRouter();
 
   const [isLang, setIsLang] = useState<string>("ru");
 
@@ -30,18 +29,16 @@ export const Header: FC = (): JSX.Element => {
           <Burger isActive={isActiveBurger} setIsActive={setIsActiveBurger} />
         </div>
         <div className={styles.lang}>
-          <span
-            onClick={() => push("/", undefined, { locale: "ru" })}
-            className={isLang === "ru" ? styles.active : ""}
-          >
-            RU
+          <span className={isLang === "ru" ? styles.active : ""}>
+            <Link href="/" locale="ru">
+              RU
+            </Link>
           </span>
           /
-          <span
-            onClick={() => push("/", undefined, { locale: "en" })}
-            className={isLang !== "ru" ? styles.active : ""}
-          >
-            EN
+          <span className={isLang !== "ru" ? styles.active : ""}>
+            <Link href="/" locale="en">
+              EN
+            </Link>
           </span>
         </div>
       </div>
