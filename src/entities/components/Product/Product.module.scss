@@ -110,7 +110,7 @@
     grid-template-columns: 1fr 3.5fr;
 
     @media (max-width: 900px) {
-      width: calc(100% - 80px);
+      width: calc(100% - 50px);
       grid-template-columns: 1fr;
       padding: 10px;
     }
@@ -175,7 +175,7 @@
     overflow-x: hidden;
 
     @media (max-width: 900px) {
-      width: calc(100% - 80px);
+      width: calc(100% - 50px);
       padding: 10px;
     }
   }
