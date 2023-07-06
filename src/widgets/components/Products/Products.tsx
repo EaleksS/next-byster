@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import styles from "./Products.module.scss";
 import { Button, Text } from "@/shared";
 import { Product } from "@/entities";
@@ -16,6 +16,7 @@ export const Products: FC = (): JSX.Element => {
     queryFn: () => getProducts.getList(),
     keepPreviousData: true,
   });
+
 
   return (
     <div className={`container ${styles.products}`}>

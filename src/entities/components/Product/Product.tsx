@@ -20,8 +20,6 @@ export const Product: FC<IProduct> = (props): JSX.Element => {
     }
   }, [isActive]);
 
-  console.log(props);
-
   return (
     <>
       <div className={styles.product} onClick={() => setIsActive(true)}>

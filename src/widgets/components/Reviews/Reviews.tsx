@@ -14,7 +14,7 @@ export const Reviews: FC = (): JSX.Element => {
   const [fetching, setFetching] = useState(false);
   const [end, setEnd] = useState(20);
 
-  const { data, isLoading } = useQuery({
+  const { data, isLoading, isFetching, isRefetching } = useQuery({
     queryKey: ["previews", end],
     queryFn: () => getPreviews.getPreviewsList(0, end),
     keepPreviousData: true,
@@ -22,11 +22,12 @@ export const Reviews: FC = (): JSX.Element => {
 
   useEffect(() => {
     if (!fetching) return;
+    if (isRefetching) return;
 
     setEnd((prev) => prev + 20);
 
     setFetching(false);
-  }, [fetching]);
+  }, [fetching, isRefetching]);
 
   useEffect(() => {
     document.addEventListener("scroll", scrollHandler);
