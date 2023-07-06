@@ -44,7 +44,7 @@ export const BurgerMenu: FC<Props> = ({
                 smooth={true}
                 onClick={() => setIsActive(false)}
               >
-                <Text center type="h3" fz="20px">
+                <Text type="h3" center fz="18px" fw="600" up>
                   Главная
                 </Text>
               </Link>
@@ -55,13 +55,13 @@ export const BurgerMenu: FC<Props> = ({
                 setIsActive(false);
               }}
             >
-              <Text center type="h3" fz="20px">
+              <Text type="h3" center fz="18px" fw="600" up>
                 Наши читы
               </Text>
             </li>
             <li>
               <Link to="about" smooth={true} onClick={() => setIsActive(false)}>
-                <Text center type="h3" fz="20px">
+                <Text type="h3" center fz="18px" fw="600" up>
                   О нас
                 </Text>
               </Link>
@@ -72,7 +72,7 @@ export const BurgerMenu: FC<Props> = ({
                 smooth={true}
                 onClick={() => setIsActive(false)}
               >
-                <Text center type="h3" fz="20px">
+                <Text type="h3" center fz="18px" fw="600" up>
                   Отзывы
                 </Text>
               </Link>

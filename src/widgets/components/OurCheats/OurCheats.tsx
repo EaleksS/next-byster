@@ -23,8 +23,14 @@ export const OurCheats: FC<Props> = ({
   }, [isActive]);
 
   return (
-    <Modal isActive={isActive} setIsActive={setIsActive} bg={false}>
-      <div className={` ${styles.our_cheats}`}>
+    <div
+      className={`${styles.modal} ${isActive && styles.active}`}
+      onClick={() => setIsActive(false)}
+    >
+      <div
+        className={` ${styles.our_cheats}`}
+        onClick={(e) => e.stopPropagation()}
+      >
         <IoClose
           className={styles.close}
           onClick={() => setIsActive(false)}
@@ -35,6 +41,6 @@ export const OurCheats: FC<Props> = ({
           ))}
         </div>
       </div>
-    </Modal>
+    </div>
   );
 };

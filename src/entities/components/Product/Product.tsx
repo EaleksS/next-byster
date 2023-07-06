@@ -7,6 +7,7 @@ import { Modal, Slider } from "../..";
 import { IoClose } from "react-icons/io5";
 import Image from "next/image";
 import { IProduct } from "@/widgets/interface/products.interface";
+import ReactMarkdown from "react-markdown";
 
 export const Product: FC<IProduct> = (props): JSX.Element => {
   const [isActive, setIsActive] = useState<boolean>(false);
@@ -18,6 +19,8 @@ export const Product: FC<IProduct> = (props): JSX.Element => {
       document.body.style.overflowY = "auto";
     }
   }, [isActive]);
+
+  console.log(props);
 
   return (
     <>
@@ -40,43 +43,40 @@ export const Product: FC<IProduct> = (props): JSX.Element => {
         </div>
       </div>
       {/* Modal */}
-      <Modal setIsActive={setIsActive} isActive={isActive}>
-        <div className={styles.modal}>
-          <IoClose
-            className={styles.close}
-            onClick={() => setIsActive(false)}
-          ></IoClose>
-          <div className={styles.container}>
-            <div className={styles.img}>
-              <Image
-                src={props.image_url ? props.image_url : ""}
-                alt="product"
-                width={500}
-                height={500}
-              />
-            </div>
-            <div className={styles.content}>
-              <Text type="h3">{props.name}</Text>
-              <Text mt="20px">
-                {props.rotations.map((e) => (
-                  <Fragment key={e.id}>
-                    {e.description} <br />
-                    <br />
-                  </Fragment>
-                ))}
-              </Text>
-              <div className={styles.price}>
-                <Button type="primary" radius="10px">
-                  Купить за {props.price}P
-                </Button>
-              </div>
-            </div>
+
+      <div
+        className={`${styles.modal} ${isActive && styles.active}`}
+        onClick={() => setIsActive(false)}
+      >
+        <IoClose
+          className={styles.close}
+          onClick={() => setIsActive(false)}
+        ></IoClose>
+        <div className={styles.container} onClick={(e) => e.stopPropagation()}>
+          <div className={styles.img}>
+            <Image
+              src={props.image_url ? props.image_url : ""}
+              alt="product"
+              width={500}
+              height={500}
+            />
           </div>
-          <div className={styles.slider}>
-            <Slider {...props} />
+          <div className={styles.content}>
+            <Text type="h3">{props.name}</Text>
+            <Text mt="20px">
+              <ReactMarkdown>{props.rotations[0].description}</ReactMarkdown>
+            </Text>
+            <div className={styles.price}>
+              <Button type="primary" radius="10px">
+                Купить за {props.price}P
+              </Button>
+            </div>
           </div>
         </div>
-      </Modal>
+        <div className={styles.slider} onClick={(e) => e.stopPropagation()}>
+          <Slider {...props} />
+        </div>
+      </div>
     </>
   );
 };

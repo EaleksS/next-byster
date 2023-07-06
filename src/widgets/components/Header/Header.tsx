@@ -5,8 +5,6 @@ import styles from "./Header.module.scss";
 import { Burger, Logo, Nav } from "@/entities";
 import { OurCheats } from "../OurCheats/OurCheats";
 import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
-import { useRouter } from "next/navigation";
-import Link from "next-intl/link";
 
 export const Header: FC = (): JSX.Element => {
   const [isActive, setIsActive] = useState<boolean>(false);
@@ -29,17 +27,8 @@ export const Header: FC = (): JSX.Element => {
           <Burger isActive={isActiveBurger} setIsActive={setIsActiveBurger} />
         </div>
         <div className={styles.lang}>
-          <span className={isLang === "ru" ? styles.active : ""}>
-            <Link href="/" locale="ru">
-              RU
-            </Link>
-          </span>
-          /
-          <span className={isLang !== "ru" ? styles.active : ""}>
-            <Link href="/" locale="en">
-              EN
-            </Link>
-          </span>
+          <span className={isLang === "ru" ? styles.active : ""}>RU</span>/
+          <span className={isLang !== "ru" ? styles.active : ""}>EN</span>
         </div>
       </div>
     </header>

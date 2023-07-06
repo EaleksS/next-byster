@@ -3,10 +3,8 @@
 import { FC, useEffect, useRef } from "react";
 import styles from "./Preview.module.scss";
 import { Button, Text } from "@/shared";
-// import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useTranslations } from "next-intl";
 
 export const Preview: FC = (): JSX.Element => {
   const img1 = useRef<HTMLImageElement>(null);
@@ -28,7 +26,6 @@ export const Preview: FC = (): JSX.Element => {
     return () => document.removeEventListener("mousemove", parallax);
   }, []);
 
-  const t = useTranslations("Index");
 
   return (
     <div className={`${styles.preview} container`}>
@@ -46,7 +43,6 @@ export const Preview: FC = (): JSX.Element => {
           Присутствуют функции автобафа, аое и соло режима, прожимок и дефов,
           авто-снятие оружие на леди, диспел и многое другое, заинтересовался?
           Жми на кнопку ниже!
-          {t("title")}
         </Text>
 
         <Button
