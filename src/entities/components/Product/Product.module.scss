@@ -90,6 +90,11 @@
     z-index: 5;
     background: #171717;
     border-radius: 5px;
+
+    @media (max-width: 900px) {
+      top: 25px;
+      background: transparent;
+    }
   }
 
   @media (max-width: 900px) {
