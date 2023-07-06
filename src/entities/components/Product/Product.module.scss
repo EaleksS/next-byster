@@ -105,13 +105,14 @@
     background: #171717;
     padding: 20px;
     border-radius: 15px;
-overflow-x: hidden;
+    overflow-x: hidden;
     display: grid;
     grid-template-columns: 1fr 3.5fr;
 
     @media (max-width: 900px) {
+      width: calc(100% - 80px);
       grid-template-columns: 1fr;
-      padding: 20px;
+      padding: 10px;
     }
 
     .img {
@@ -170,7 +171,13 @@ overflow-x: hidden;
     background: #171717;
     padding: 20px;
     border-radius: 15px;
-    margin-bottom: 20px;overflow-x: hidden;
+    margin-bottom: 20px;
+    overflow-x: hidden;
+
+    @media (max-width: 900px) {
+      width: calc(100% - 80px);
+      padding: 10px;
+    }
   }
 }
 
