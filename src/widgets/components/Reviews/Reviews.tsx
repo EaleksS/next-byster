@@ -2,7 +2,7 @@
 
 import { FC, useEffect, useState } from "react";
 import styles from "./Reviews.module.scss";
-import { Text } from "@/shared";
+import { Loader, Text } from "@/shared";
 import { getPreviews } from "@/widgets/services/previews.service";
 import { useQuery } from "react-query";
 import { IReview } from "@/widgets/interface/reviews.interface";
@@ -54,28 +54,34 @@ export const Reviews: FC = (): JSX.Element => {
         Отзывы
       </Text>
       <div className={styles.reviews}>
-        {!isLoading ? (
-          data.map((review: IReview, index: number) => (
-            <div
-              key={index}
-              className={styles.review}
-              onClick={() => router.push(review.url)}
-            >
-              <Text type="h3">{review.author}</Text>
-              <Text>
-                <span>
-                  {new Date(review.review_date * 1000)
-                    .toLocaleDateString("en-US")
-                    .replace("/", ".")
-                    .replace("/", ".")}
-                </span>
-              </Text>
-              <Text mt="20px">{review.text}</Text>
-            </div>
-          ))
-        ) : (
-          <div>loading</div>
-        )}
+        {!isLoading
+          ? data.map((review: IReview, index: number) => (
+              <div
+                key={index}
+                className={styles.review}
+                onClick={() => router.push(review.url)}
+              >
+                <Text type="h3">{review.author}</Text>
+                <Text>
+                  <span>
+                    {new Date(review.review_date * 1000)
+                      .toLocaleDateString("en-US")
+                      .replace("/", ".")
+                      .replace("/", ".")}
+                  </span>
+                </Text>
+                <Text mt="20px">{review.text}</Text>
+              </div>
+            ))
+          : ""}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Loader />
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 "use client";
 
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import styles from "./Products.module.scss";
-import { Button, Text } from "@/shared";
+import { Button, Loader, Text } from "@/shared";
 import { Product } from "@/entities";
 import { useQuery } from "react-query";
 import { getProducts } from "@/widgets/services/products.service";
@@ -16,7 +16,6 @@ export const Products: FC = (): JSX.Element => {
     queryFn: () => getProducts.getList(),
     keepPreviousData: true,
   });
-
 
   return (
     <div className={`container ${styles.products}`}>
@@ -46,14 +45,27 @@ export const Products: FC = (): JSX.Element => {
           Utitlity
         </Button>
       </div>
+
       <div className={styles.items}>
-        {!isLoading
-          ? data
-              .filter((filter: IProduct) =>
-                filter.name.toLowerCase().includes(active.toLowerCase())
-              )
-              .map((e: IProduct) => <Product key={e.id} {...e} />)
-          : "loading"}
+        {!isLoading ? (
+          data
+            .filter((filter: IProduct) =>
+              filter.name.toLowerCase().includes(active.toLowerCase())
+            )
+            .map((e: IProduct) => <Product key={e.id} {...e} />)
+        ) : (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              position: "absolute",
+              left: 0,
+              right: 0,
+            }}
+          >
+            <Loader />
+          </div>
+        )}
       </div>
     </div>
   );
