@@ -7,12 +7,12 @@
   justify-content: center;
 
   ul {
-    width: 250px;
+    width: 200px;
     flex-direction: column;
     display: flex;
     gap: 1rem;
 
-    background: rgba($color: #fff, $alpha: 0.08);
+    background: #171717;
     backdrop-filter: blur(10px);
     padding: 20px 30px;
     border-radius: 10px;

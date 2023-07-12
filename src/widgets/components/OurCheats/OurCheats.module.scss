@@ -5,7 +5,7 @@
   pointer-events: all;
 
   border-radius: 10px;
-  padding: 30px;
+  padding: 20px;
 
   @media (max-width: 900px) {
     width: auto;
@@ -19,6 +19,9 @@
 
     overflow: auto;
     height: 100%;
+    background: #171717;
+    border-radius: 10px;
+    padding: 20px;
   }
 
   .close {

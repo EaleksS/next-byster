@@ -36,7 +36,7 @@ export const OurCheats: FC<Props> = ({
           onClick={() => setIsActive(false)}
         ></IoClose>
         <div className={styles.items}>
-          {[1, 2, 3].map((e) => (
+          {[1, 2, 3, 4].map((e) => (
             <Cheats key={e} />
           ))}
         </div>
