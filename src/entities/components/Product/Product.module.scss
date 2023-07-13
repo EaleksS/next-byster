@@ -40,6 +40,12 @@
     height: 100%;
     transition: all 0.4s ease-in-out;
     object-fit: cover;
+
+    &.iconv {
+      width: 50px;
+      height: 50px;
+      transform: translate(230%, 150%);
+    }
   }
 
   .content {
@@ -129,6 +135,11 @@
         object-fit: cover;
         border-radius: 10px;
         cursor: pointer;
+
+        &.iconv {
+          width: 50px;
+          height: 50px;
+        }
 
         @media (max-width: 900px) {
           width: 200px;
