@@ -24,7 +24,7 @@ export const Product: FC<IProduct> = (props): JSX.Element => {
     <>
       <div className={styles.product} onClick={() => setIsActive(true)}>
         <Image
-          src={props.image_url ? props.image_url : ""}
+          src={props.image_url ? props.image_url : "./iconsvopros.png"}
           alt="product"
           width={500}
           height={500}
@@ -53,7 +53,7 @@ export const Product: FC<IProduct> = (props): JSX.Element => {
         <div className={styles.container} onClick={(e) => e.stopPropagation()}>
           <div className={styles.img}>
             <Image
-              src={props.image_url ? props.image_url : ""}
+              src={props.image_url ? props.image_url : "./iconsvopros.png"}
               alt="product"
               width={500}
               height={500}
