@@ -26,16 +26,13 @@ export const Preview: FC = (): JSX.Element => {
     return () => document.removeEventListener("mousemove", parallax);
   }, []);
 
-
   return (
     <div className={`${styles.preview} container`}>
-      <div
-        className={styles.title}
-      >
+      <div className={styles.title}>
         <Text type="h1" up fw="600">
           Byster - Авто PvE и PvP
         </Text>
-        <Text type="h3" mt="3rem" fw="400">
+        <Text type="h3" mt="2rem" fw="400" color="#ece8e1">
           Byster - это многофункциональный бот, который имеет большое количество
           функций. Бустер хилит, танчит, наносит урон. Отслеживает ваши проки,
           прожимает тринькеты, профессии, дефается, меняет ротацию в зависимости
@@ -45,18 +42,11 @@ export const Preview: FC = (): JSX.Element => {
           Жми на кнопку ниже!
         </Text>
 
-        <Button
-          mt="3rem"
-          type="primary"
-          radius="10px"
-          onClick={() => router.push("/download")}
-        >
+        <Button mt="3rem" type="new" onClick={() => router.push("/download")}>
           Попробовать бесплатно
         </Button>
       </div>
-      <div
-        className={styles.img}
-      >
+      <div className={styles.img}>
         <Image
           ref={img1}
           priority

@@ -1,12 +1,12 @@
 import { Header } from "@/widgets";
 import "../styles/globals.css";
 import "../styles/reset.min.css";
-import { Roboto } from "next/font/google";
+import localFont from "next/font/local";
 import { ReactQueryProvider } from "@/ReactQueryProvider";
 
-const roboto = Roboto({
-  weight: ["100", "300", "400", "700", "900"],
-  subsets: ["latin"],
+const myFont = localFont({
+  src: "./DIN Next W1G/dinnextw1g.otf",
+  display: "swap",
 });
 
 export const metadata = {
@@ -22,7 +22,7 @@ export default async function RootLayout({
   return (
     <ReactQueryProvider>
       <html lang="ru">
-        <body style={roboto.style}>
+        <body style={myFont.style}>
           <Header />
           {children}
         </body>

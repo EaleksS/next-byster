@@ -24,21 +24,22 @@ export const Products: FC = (): JSX.Element => {
       </Text>
       <div className={styles.btns}>
         <Button
-          type={active === "pvp" ? "primary" : "default"}
+          type={"new"}
           onClick={() => setActive("pvp")}
           radius="10px"
         >
           PvP
         </Button>
         <Button
-          type={active === "pve" ? "primary" : "default"}
+          type={"new"}
           onClick={() => setActive("pve")}
+          
           radius="10px"
         >
           PvE
         </Button>
         <Button
-          type={active === "utility" ? "primary" : "default"}
+          type={"new"}
           onClick={() => setActive("utility")}
           radius="10px"
         >

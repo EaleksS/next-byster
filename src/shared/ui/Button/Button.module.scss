@@ -1,4 +1,3 @@
-
 .btn {
   height: 50px;
   border: 0;
@@ -62,6 +61,79 @@
   @media (min-width: 600px) {
     &:hover {
       opacity: 0.8;
+    }
+  }
+}
+
+.new {
+  padding: 5px;
+  position: relative;
+  height: 70px;
+
+  &::after {
+    content: "";
+    border-top: 1px solid hsla(38, 22%, 90%, 0.5);
+    border-left: 1px solid hsla(38, 22%, 90%, 0.5);
+    border-right: 1px solid hsla(38, 22%, 90%, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+  }
+
+  &::before {
+    content: "";
+    border-bottom: 1px solid hsla(38, 22%, 90%, 0.5);
+    border-left: 1px solid hsla(38, 22%, 90%, 0.5);
+    border-right: 1px solid hsla(38, 22%, 90%, 0.5);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 40%;
+  }
+
+  &:hover {
+    .content {
+      &::after {
+        right: 5px;
+      }
+    }
+  }
+
+  .content {
+    background-image: linear-gradient(
+      to right,
+      #ea8d41,
+      #ec8343,
+      #ed7847,
+      #ed6e4b,
+      #ec6350
+    );
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
+
+    &::after {
+      background: #101218;
+      content: "";
+      position: absolute;
+      top: 5px;
+      bottom: 5px;
+      left: 5px;
+      right: 100%;
+
+      transition: all 0.2s ease-in-out;
+    }
+
+    h3 {
+      position: relative;
+      z-index: 2;
     }
   }
 }
