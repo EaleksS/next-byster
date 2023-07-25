@@ -3,7 +3,7 @@ import styles from "./Button.module.scss";
 import { Text } from "../..";
 
 interface Props {
-  type?: "default" | "primary" | "new";
+  type?: "default" | "primary" | "primary2" | "new";
   children?: ReactNode;
   onClick?: () => void;
   mt?: string;
@@ -58,6 +58,24 @@ export const Button: FC<Props> = ({
         >
           <div className={styles.content}>
             <Text type="h3">{children}</Text>
+          </div>
+        </button>
+      );
+
+    case "primary2":
+      return (
+        <button
+          className={`${styles.btn} ${styles.active} ${styles.primary2}`}
+          style={{
+            marginTop: mt,
+            color: color,
+            backgroundColor: bgc,
+            borderRadius: radius,
+          }}
+          onClick={onClick}
+        >
+          <div className={styles.content}>
+            <h2>{children}</h2>
           </div>
         </button>
       );

@@ -42,7 +42,11 @@ export const Preview: FC = (): JSX.Element => {
           Жми на кнопку ниже!
         </Text>
 
-        <Button mt="3rem" type="new" onClick={() => router.push("/download")}>
+        <Button
+          mt="3rem"
+          type="primary2"
+          onClick={() => router.push("/download")}
+        >
           Попробовать бесплатно
         </Button>
       </div>
