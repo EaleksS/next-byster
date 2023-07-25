@@ -14,7 +14,7 @@ export const Reviews: FC = (): JSX.Element => {
   const [fetching, setFetching] = useState(false);
   const [end, setEnd] = useState(20);
 
-  const { data, isLoading, isFetching, isRefetching } = useQuery({
+  const { data, isLoading, isRefetching } = useQuery({
     queryKey: ["previews", end],
     queryFn: () => getPreviews.getPreviewsList(0, end),
     keepPreviousData: true,

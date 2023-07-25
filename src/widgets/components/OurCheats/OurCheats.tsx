@@ -2,8 +2,12 @@
 
 import { Dispatch, FC, SetStateAction, useEffect } from "react";
 import styles from "./OurCheats.module.scss";
-import { Cheats, Modal } from "@/entities";
+import { Cheats } from "@/entities";
 import { IoClose } from "react-icons/io5";
+import { useQuery } from "react-query";
+import { getCheats } from "@/widgets/services/cheats.service";
+import { ICheats, IProducts } from "@/widgets/interface/cheats.interface";
+import { Loader } from "@/shared";
 
 interface Props {
   isActive: boolean;
@@ -22,6 +26,23 @@ export const OurCheats: FC<Props> = ({
     }
   }, [isActive]);
 
+  const { data, isLoading } = useQuery({
+    queryKey: ["cheats"],
+    queryFn: () => getCheats.getCheatsList(),
+    keepPreviousData: true,
+  });
+
+  console.log(data);
+
+  let newData: ICheats[] = [];
+
+  if (!isLoading) {
+    Object.values(data).forEach((el: any) => newData.push(el));
+    // const table: any = {};
+
+    // newData = newData.filter(({ id }) => !table[id] && (table[id] = 1));
+  }
+
   return (
     <div
       className={`${styles.modal} ${isActive && styles.active}`}
@@ -36,9 +57,21 @@ export const OurCheats: FC<Props> = ({
           onClick={() => setIsActive(false)}
         ></IoClose>
         <div className={styles.items}>
-          {[1, 2, 3, 4].map((e) => (
-            <Cheats key={e} />
-          ))}
+          {newData.length ? (
+            newData.map((e: ICheats) => <Cheats key={e.id} {...e} />)
+          ) : (
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                position: "absolute",
+                left: 0,
+                right: 0,
+              }}
+            >
+              <Loader />
+            </div>
+          )}
         </div>
       </div>
     </div>

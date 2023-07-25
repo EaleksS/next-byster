@@ -7,6 +7,10 @@
   padding: 1rem;
 
   @media (max-width: 900px) {
+    width: calc(100% - 31px);
+  }
+
+  @media (max-width: 900px) {
     grid-template-columns: 1fr;
   }
 
@@ -30,6 +34,10 @@
       height: 200px;
       object-fit: cover;
       transition: all 0.3s ease-in-out;
+
+      @media (max-width: 900px) {
+        height: 100%;
+      }
     }
 
     .title {
@@ -45,8 +53,8 @@
 
       img {
         height: 30px;
-        width: 30px;
-        border-radius: 50%;
+        width: 100%;
+        border-radius: 50px;
       }
     }
   }
@@ -67,6 +75,11 @@
         border-radius: 50%;
         animation: glowing 1300ms infinite;
         transition: all 0.2s ease-in-out;
+
+        &.detec {
+          background: #ff4040;
+          animation: glowingred 1300ms infinite;
+        }
       }
 
       h3 {
@@ -116,6 +129,21 @@
   }
   100% {
     background: rgba($color: #19e619, $alpha: 1);
+    transform: scale(1);
+  }
+}
+
+@keyframes glowingred {
+  0% {
+    background: rgba($color: #ff4040, $alpha: 1);
+    transform: scale(1);
+  }
+  50% {
+    background: rgba($color: #ff4040, $alpha: 0.5);
+    transform: scale(1.2);
+  }
+  100% {
+    background: rgba($color: #ff4040, $alpha: 1);
     transform: scale(1);
   }
 }
