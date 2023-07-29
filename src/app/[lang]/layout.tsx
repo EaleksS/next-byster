@@ -4,9 +4,6 @@ import "../../styles/reset.min.css";
 import localFont from "next/font/local";
 import { ReactQueryProvider } from "@/ReactQueryProvider";
 import { defaultLocale } from "../../middleware";
-import { CSSProperties, Suspense } from "react";
-import { Loader } from "@/shared";
-import { PSuspense } from "@/PSuspense";
 
 const myFont = localFont({
   src: "../../DIN Next W1G/dinnextw1g.otf",
@@ -49,10 +46,8 @@ export default async function RootLayout({
           <link rel="manifest" href="favicon/site.webmanifest" />
         </head>
         <body style={myFont.style}>
-          <PSuspense>
-            <Header lang={params.lang ?? defaultLocale} />
-            {children}
-          </PSuspense>
+          <Header lang={params.lang ?? defaultLocale} />
+          {children}
         </body>
       </html>
     </ReactQueryProvider>

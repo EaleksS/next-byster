@@ -32,8 +32,6 @@ export const OurCheats: FC<Props> = ({
     keepPreviousData: true,
   });
 
-  console.log(data);
-
   let newData: ICheats[] = [];
 
   if (!isLoading) {
