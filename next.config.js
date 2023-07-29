@@ -8,6 +8,7 @@ const nextConfig = {
     defaultLocale: "en",
     localeDetection: true,
   },
+  outputFileTracing: true,
 };
 
 module.exports = nextConfig;
