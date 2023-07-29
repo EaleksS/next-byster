@@ -29,13 +29,13 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    // Skip all internal paths (_next)
-    "/((?!_next|api|favicon.ico).*)",
-    // Optional: only run on root (/) URL
-    // '/'
-  ],
-  // matcher: ["/((?!api|_next|.*\\..*).*)"],
+  // matcher: [
+  //   // Skip all internal paths (_next)
+  //   "/((?!_next|api|favicon.ico).*)",
+  //   // Optional: only run on root (/) URL
+  //   // '/'
+  // ],
+  matcher: ["/((?!api|_next|.*\\..*).*)"],
 };
 
 // Import cookies-next library
