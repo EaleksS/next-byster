@@ -22,6 +22,8 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { lang: string };
 }) {
+  console.log(params);
+
   return (
     <ReactQueryProvider>
       <html lang={params.lang ?? defaultLocale}>
