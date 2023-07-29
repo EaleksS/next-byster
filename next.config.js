@@ -8,7 +8,6 @@ const nextConfig = {
     defaultLocale: "en",
     localeDetection: true,
   },
-  rewrites: [{ source: "/(.*)", destination: "/index.html" }],
 };
 
 module.exports = nextConfig;
