@@ -7,8 +7,9 @@ import { getPreviews } from "@/widgets/services/previews.service";
 import { useQuery } from "react-query";
 import { IReview } from "@/widgets/interface/reviews.interface";
 import { useRouter } from "next/navigation";
+import { dictionary } from "@/content";
 
-export const Reviews: FC = (): JSX.Element => {
+export const Reviews: FC<{ lang: string }> = ({ lang }): JSX.Element => {
   const router = useRouter();
 
   const [fetching, setFetching] = useState(false);
@@ -52,7 +53,7 @@ export const Reviews: FC = (): JSX.Element => {
     <div className={`container`} id="reviews">
       <div className={styles.name}>
         <Text type="h2" up center>
-          Отзывы
+          {dictionary[lang]?.reviewsTitle}
         </Text>
         <div className={styles.back}>reviews</div>
       </div>

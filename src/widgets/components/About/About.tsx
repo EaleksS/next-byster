@@ -4,15 +4,16 @@ import { FC, useState } from "react";
 import styles from "./About.module.scss";
 import { Text } from "@/shared";
 import Image from "next/image";
+import { dictionary } from "@/content";
 
-export const About: FC = (): JSX.Element => {
+export const About: FC<{ lang: string }> = ({ lang }): JSX.Element => {
   const [active, setActive] = useState<string>("convenience");
 
   return (
     <div className={styles.img} id="about">
       <div className={styles.name}>
         <Text type="h2" up center>
-          Наши основные преимущества
+          {dictionary[lang]?.advantageTitle}
         </Text>
         <div className={styles.back}>Advantages</div>
       </div>
@@ -39,51 +40,42 @@ export const About: FC = (): JSX.Element => {
         </div>
         <Text type="h1" center mt="50px" up>
           <span className={active === "convenience" ? styles.active : ""}>
-            Удобство
+            {dictionary[lang]?.convenience}
           </span>
           <span className={active === "choose" ? styles.active : ""}>
-            ПОЧЕМУ ВЫБИРАЮТ НАС?
+            {dictionary[lang]?.choose}
           </span>
           <span className={active === "anonymity" ? styles.active : ""}>
-            Анонимность
+            {dictionary[lang]?.anonymity}
           </span>
           <span className={active === "protection" ? styles.active : ""}>
-            Защита
+            {dictionary[lang]?.protection}
           </span>
           <span className={active === "support" ? styles.active : ""}>
-            Поддержка
+            {dictionary[lang]?.support}
           </span>
           <span className={active === "functionality" ? styles.active : ""}>
-            Функционал
+            {dictionary[lang]?.functionality}
           </span>
         </Text>
         <Text type="h3" mt="50px" center fw="300">
           <b className={active === "convenience" ? styles.active : ""}>
-            Вам не нужно ничего настраивать, все уже сделано за вас, все просто
-            и легко!
+            {dictionary[lang]?.convenienceText}
           </b>
           <b className={active === "choose" ? styles.active : ""}>
-            Надежные и инновационные читы, тестируемые нашей командой. Удобный и
-            безопасный софт с цникальными функциями для кажой игры. Поддержка и
-            помощь клиентам в решении вопросов.
+            {dictionary[lang]?.chooseText}
           </b>
           <b className={active === "anonymity" ? styles.active : ""}>
-            Информация о наших клиентах никогда не раскрывается третьим лицам.
+            {dictionary[lang]?.anonymityText}
           </b>
           <b className={active === "protection" ? styles.active : ""}>
-            Уникальная защита от любого античита как в лицензионной версии, так
-            и в пиратской версии игр. Большая команда тестировщиков проверяет
-            программное обеспечение на наличие банов.
+            {dictionary[lang]?.protectionText}
           </b>
           <b className={active === "support" ? styles.active : ""}>
-            Опытные специалисты поддержки всегда готовы ответить на ваши вопросы
-            и помочь в решении возникающих проблем.
+            {dictionary[lang]?.supportText}
           </b>
           <b className={active === "functionality" ? styles.active : ""}>
-            Команда разработчиков занимается созданием индивидуальных
-            особенностей чита для каждой игры с авторскими функциями, которые вы
-            не найдете в других проектах. Все для того что бы могли в довольно
-            насладиться приятным геймплеем в вашей любимой игре
+            {dictionary[lang]?.functionalityText}
           </b>
         </Text>
       </div>

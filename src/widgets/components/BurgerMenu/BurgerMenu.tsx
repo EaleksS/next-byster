@@ -4,17 +4,20 @@ import { Modal, Nav } from "../../../entities";
 import { Link } from "react-scroll";
 import { Text } from "@/shared";
 import { FaVk, FaYoutube } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 interface Props {
   isActive: boolean;
   setIsActive: Dispatch<SetStateAction<boolean>>;
   setIsActiveGame: Dispatch<SetStateAction<boolean>>;
+  lang: string;
 }
 
 export const BurgerMenu: FC<Props> = ({
   isActive,
   setIsActive,
   setIsActiveGame,
+  lang,
 }): JSX.Element => {
   useEffect(() => {
     if (isActive) {
@@ -31,7 +34,7 @@ export const BurgerMenu: FC<Props> = ({
     }
   }, [isActive]);
 
-  const [isLang, setIsLang] = useState<string>("ru");
+  const router = useRouter();
 
   return (
     <Modal isActive={isActive} setIsActive={setIsActive} zIndex={2}>
@@ -86,15 +89,15 @@ export const BurgerMenu: FC<Props> = ({
             <li>
               <div className={styles.lang}>
                 <span
-                  onClick={() => setIsLang("ru")}
-                  className={isLang === "ru" ? styles.active : ""}
+                  onClick={() => router.push("/ru")}
+                  className={lang === "ru" ? styles.active : ""}
                 >
                   RU
                 </span>
                 /
                 <span
-                  onClick={() => setIsLang("en")}
-                  className={isLang !== "ru" ? styles.active : ""}
+                  onClick={() => router.push("/en")}
+                  className={lang !== "ru" ? styles.active : ""}
                 >
                   EN
                 </span>

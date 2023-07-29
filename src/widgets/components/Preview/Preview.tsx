@@ -5,8 +5,13 @@ import styles from "./Preview.module.scss";
 import { Button, Text } from "@/shared";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { dictionary } from "@/content";
 
-export const Preview: FC = (): JSX.Element => {
+interface Props {
+  lang: string;
+}
+
+export const Preview: FC<Props> = ({ lang }): JSX.Element => {
   const img1 = useRef<HTMLImageElement>(null);
 
   const router = useRouter();
@@ -31,19 +36,12 @@ export const Preview: FC = (): JSX.Element => {
       <div className={styles.title}>
         <div className={styles.name}>
           <Text type="h1" up>
-            Авто PvE и PvP
+            {dictionary[lang]?.homeTitle}
           </Text>
           <div className={styles.back}>Byster</div>
-          {/* <div className={styles.line}></div> */}
         </div>
         <Text mt="2rem" fz="18px">
-          Это многофункциональный бот, который имеет большое количество функций.
-          Бустер хилит, танчит, наносит урон. Отслеживает ваши проки, прожимает
-          тринькеты, профессии, дефается, меняет ротацию в зависимости от
-          приоритета и фазы босса, для большей полезности в рейде. Присутствуют
-          функции автобафа, аое и соло режима, прожимок и дефов, авто-снятие
-          оружие на леди, диспел и многое другое, заинтересовался? Жми на кнопку
-          ниже!
+          {dictionary[lang]?.homeText}
         </Text>
 
         <Button
@@ -51,7 +49,7 @@ export const Preview: FC = (): JSX.Element => {
           type="primary2"
           onClick={() => router.push("/download")}
         >
-          Попробовать бесплатно
+          {dictionary[lang]?.homeBtn}
         </Button>
       </div>
       <div className={styles.img}>

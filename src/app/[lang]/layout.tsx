@@ -1,12 +1,12 @@
 import { Header } from "@/widgets";
-import "../styles/globals.css";
-import "../styles/reset.min.css";
+import "../../styles/globals.css";
+import "../../styles/reset.min.css";
 import localFont from "next/font/local";
 import { ReactQueryProvider } from "@/ReactQueryProvider";
-import Head from "next/head";
+import { defaultLocale } from "../../middleware";
 
 const myFont = localFont({
-  src: "./DIN Next W1G/dinnextw1g.otf",
+  src: "../../DIN Next W1G/dinnextw1g.otf",
   display: "swap",
 });
 
@@ -17,12 +17,22 @@ export const metadata = {
 
 export default async function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { lang: string };
 }) {
   return (
     <ReactQueryProvider>
-      <html lang="ru">
+      <html
+        lang={
+          global.window && window.location.hash === "#ru"
+            ? "ru"
+            : global.window && window.location.hash === "#en"
+            ? "en"
+            : params.lang ?? defaultLocale
+        }
+      >
         <head>
           <link
             rel="apple-touch-icon"
@@ -44,7 +54,7 @@ export default async function RootLayout({
           <link rel="manifest" href="favicon/site.webmanifest" />
         </head>
         <body style={myFont.style}>
-          <Header />
+          <Header lang={params.lang ?? defaultLocale} />
           {children}
         </body>
       </html>

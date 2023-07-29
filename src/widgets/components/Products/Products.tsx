@@ -7,8 +7,9 @@ import { Product } from "@/entities";
 import { useQuery } from "react-query";
 import { getProducts } from "@/widgets/services/products.service";
 import { IProduct } from "@/widgets/interface/products.interface";
+import { dictionary } from "@/content";
 
-export const Products: FC = (): JSX.Element => {
+export const Products: FC<{ lang: string }> = ({ lang }): JSX.Element => {
   const [active, setActive] = useState<string>("pvp");
 
   const { data, isLoading } = useQuery({
@@ -21,7 +22,7 @@ export const Products: FC = (): JSX.Element => {
     <div className={`container ${styles.products}`}>
       <div className={styles.name}>
         <Text type="h2" up center>
-          Список наших ротаций
+          {dictionary[lang]?.rotationTitle}
         </Text>
         <div className={styles.back}>rotation</div>
       </div>
@@ -55,7 +56,7 @@ export const Products: FC = (): JSX.Element => {
             .filter((filter: IProduct) =>
               filter.name.toLowerCase().includes(active.toLowerCase())
             )
-            .map((e: IProduct) => <Product key={e.id} {...e} />)
+            .map((e: IProduct) => <Product key={e.id} {...e} lang={lang} />)
         ) : (
           <div
             style={{

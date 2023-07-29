@@ -8,8 +8,11 @@ import { IoClose } from "react-icons/io5";
 import Image from "next/image";
 import { IProduct } from "@/widgets/interface/products.interface";
 import ReactMarkdown from "react-markdown";
+import { dictionary } from "@/content";
 
-export const Product: FC<IProduct> = (props): JSX.Element => {
+export const Product: FC<IProduct & { lang: string }> = (
+  props
+): JSX.Element => {
   const [isActive, setIsActive] = useState<boolean>(false);
 
   useEffect(() => {
@@ -64,11 +67,15 @@ export const Product: FC<IProduct> = (props): JSX.Element => {
           <div className={styles.content}>
             <Text type="h3">{props.name}</Text>
             <Text mt="20px">
-              <ReactMarkdown>{props.rotations[0].description}</ReactMarkdown>
+              <ReactMarkdown>
+                {props.lang === "ru"
+                  ? props.rotations[0].description
+                  : props.rotations[0].description_en}
+              </ReactMarkdown>
             </Text>
             <div className={styles.price}>
               <Button type="primary" radius="10px">
-                Купить за {props.price}P
+                {dictionary[props.lang]?.rotationBtn} {props.price}P
               </Button>
             </div>
           </div>
