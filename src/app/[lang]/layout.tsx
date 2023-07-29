@@ -27,15 +27,7 @@ export default async function RootLayout({
 }) {
   return (
     <ReactQueryProvider>
-      <html
-        lang={
-          global.window && window.location.hash === "#ru"
-            ? "ru"
-            : global.window && window.location.hash === "#en"
-            ? "en"
-            : params.lang ?? defaultLocale
-        }
-      >
+      <html lang={params.lang ?? defaultLocale}>
         <head>
           <link
             rel="apple-touch-icon"
