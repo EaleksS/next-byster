@@ -10,6 +10,12 @@ export const About: FC = (): JSX.Element => {
 
   return (
     <div className={styles.img} id="about">
+      <div className={styles.name}>
+        <Text type="h2" up center>
+          Наши основные преимущества
+        </Text>
+        <div className={styles.back}>Advantages</div>
+      </div>
       <div className={styles.lines}></div>
       <div className={`container ${styles.about}`}>
         <div className={styles.icons}>

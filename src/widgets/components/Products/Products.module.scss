@@ -3,16 +3,67 @@
   position: relative;
 
   h2 {
-    text-transform: uppercase;
-    background: linear-gradient(45deg, #edc667 30%, #8da0ba);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    // text-transform: uppercase;
+    // background: linear-gradient(45deg, #edc667 30%, #8da0ba);
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
 
     @media (min-width: 500px) {
       white-space: nowrap;
     }
     @media (max-width: 500px) {
       text-align: center !important;
+    }
+  }
+
+  .name {
+    position: relative;
+
+    h2 {
+      text-align: center;
+      font-weight: 600;
+      font-size: 45px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .back {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -8px;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: rgba($color: #fff, $alpha: 0.1);
+      font-size: 110px;
+      text-transform: uppercase;
+      font-weight: 900;
+      z-index: 0;
+
+      @media (max-width: 500px) {
+        font-size: 80px;
+      }
+
+      // @media (max-width: 700px) {
+      //   display: none;
+      // }
+    }
+
+    .line {
+      position: absolute;
+      bottom: -30px;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 200px;
+      margin: 0 auto;
+      height: 2px;
+      background: #fa8e4b;
     }
   }
 

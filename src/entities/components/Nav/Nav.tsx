@@ -20,13 +20,13 @@ export const Nav: FC<Props> = ({ setIsActive }): JSX.Element => {
       <ul className={styles.ul}>
         <li>
           <Link href={"/"}>
-            <Text type="h3" up>
+            <Text type="h3" fw="600" up>
               Главная
             </Text>
           </Link>
         </li>
         <li onClick={() => setIsActive((prev) => !prev)}>
-          <Text type="h3" up>
+          <Text type="h3" fw="600" up>
             Наши читы
           </Text>
         </li>
@@ -36,7 +36,7 @@ export const Nav: FC<Props> = ({ setIsActive }): JSX.Element => {
             smooth={true}
             onClick={() => router.push("/#about")}
           >
-            <Text type="h3" up>
+            <Text type="h3" fw="600" up>
               О нас
             </Text>
           </LinkScroll>
@@ -47,7 +47,7 @@ export const Nav: FC<Props> = ({ setIsActive }): JSX.Element => {
             smooth={true}
             onClick={() => router.push("/#reviews")}
           >
-            <Text type="h3" up>
+            <Text type="h3" fw="600" up>
               Отзывы
             </Text>
           </LinkScroll>

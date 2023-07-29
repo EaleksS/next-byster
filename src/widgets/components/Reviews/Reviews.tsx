@@ -50,9 +50,12 @@ export const Reviews: FC = (): JSX.Element => {
 
   return (
     <div className={`container`} id="reviews">
-      <Text type="h2" center mt="100px">
-        Отзывы
-      </Text>
+      <div className={styles.name}>
+        <Text type="h2" up center>
+          Отзывы
+        </Text>
+        <div className={styles.back}>reviews</div>
+      </div>
       <div className={styles.reviews}>
         {!isLoading
           ? data.map((review: IReview, index: number) => (

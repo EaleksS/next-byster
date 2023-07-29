@@ -1,9 +1,9 @@
-import { FC, ReactNode } from "react";
+import { CSSProperties, FC, ReactNode } from "react";
 import styles from "./Button.module.scss";
 import { Text } from "../..";
 
 interface Props {
-  type?: "default" | "primary" | "primary2" | "new";
+  type?: "default" | "primary" | "primary2" | "new" | "choice";
   children?: ReactNode;
   onClick?: () => void;
   mt?: string;
@@ -23,6 +23,13 @@ export const Button: FC<Props> = ({
   bgc,
   radius = "0",
 }): JSX.Element => {
+  const styleComp: CSSProperties = {
+    marginTop: mt,
+    color: color,
+    backgroundColor: bgc,
+    borderRadius: radius,
+  };
+
   switch (type) {
     case "primary":
       return (
@@ -30,12 +37,7 @@ export const Button: FC<Props> = ({
           className={`${styles.btn} ${styles.primary} ${
             isActive && styles.active
           } ${isActive === undefined && styles.def}`}
-          style={{
-            marginTop: mt,
-            color: color,
-            backgroundColor: bgc,
-            borderRadius: radius,
-          }}
+          style={styleComp}
           onClick={onClick}
         >
           <Text type="h3">{children}</Text>
@@ -48,12 +50,7 @@ export const Button: FC<Props> = ({
           className={`${styles.btn} ${styles.new} ${
             isActive && styles.active
           } ${isActive === undefined && styles.def}`}
-          style={{
-            marginTop: mt,
-            color: color,
-            backgroundColor: bgc,
-            borderRadius: radius,
-          }}
+          style={styleComp}
           onClick={onClick}
         >
           <div className={styles.content}>
@@ -66,12 +63,22 @@ export const Button: FC<Props> = ({
       return (
         <button
           className={`${styles.btn} ${styles.active} ${styles.primary2}`}
-          style={{
-            marginTop: mt,
-            color: color,
-            backgroundColor: bgc,
-            borderRadius: radius,
-          }}
+          style={styleComp}
+          onClick={onClick}
+        >
+          <div className={styles.content}>
+            <h2>{children}</h2>
+          </div>
+        </button>
+      );
+
+    case "choice":
+      return (
+        <button
+          className={`${styles.btn} ${isActive && styles.active} ${
+            styles.choice
+          }`}
+          style={styleComp}
           onClick={onClick}
         >
           <div className={styles.content}>
@@ -86,12 +93,7 @@ export const Button: FC<Props> = ({
           className={`${styles.btn} ${styles.default} ${
             isActive && styles.active
           } ${isActive === undefined && styles.def}`}
-          style={{
-            marginTop: mt,
-            color: color,
-            backgroundColor: bgc,
-            borderRadius: radius,
-          }}
+          style={styleComp}
           onClick={onClick}
         >
           <Text type="h3">{children}</Text>

@@ -52,17 +52,68 @@
   }
 
   h1 {
-    background: #fdbc2f;
-    background: linear-gradient(to right, #fdbc2f 0%, #f87b6a 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    // background: #fdbc2f;
+    // background: linear-gradient(to right, #fdbc2f 0%, #f87b6a 100%);
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
     // font-family: 'Rubik Iso', cursive;
-    
+    // color: #fa8e4b;
+
     @media (min-width: 500px) {
       white-space: nowrap;
     }
     @media (max-width: 500px) {
       text-align: center !important;
+    }
+  }
+
+  .name {
+    position: relative;
+
+    h1 {
+      text-align: center;
+      font-weight: 600;
+      position: relative;
+      z-index: 1;
+    }
+
+    .back {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -8px;
+      right: 0;
+      display: flex;
+      align-items: center;
+
+      color: rgba($color: #aaa7a6, $alpha: 0.2);
+      font-size: 110px;
+      text-transform: uppercase;
+      font-weight: 900;
+      z-index: 0;
+
+      @media (max-width: 500px) {
+        justify-content: center;
+        font-size: 80px;
+      }
+
+      // @media (max-width: 700px) {
+      //   display: none;
+      // }
+    }
+
+    .line {
+      position: absolute;
+      bottom: -30px;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 200px;
+      margin: 0 auto;
+      height: 2px;
+      background: #fa8e4b;
     }
   }
 

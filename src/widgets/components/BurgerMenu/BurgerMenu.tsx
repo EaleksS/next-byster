@@ -61,7 +61,7 @@ export const BurgerMenu: FC<Props> = ({
             </li>
             <li>
               <Link to="about" smooth={true} onClick={() => setIsActive(false)}>
-                <Text type="h3" center fz="18px" fw="600" up>
+                <Text type="h3" center fz="18px" up>
                   О нас
                 </Text>
               </Link>

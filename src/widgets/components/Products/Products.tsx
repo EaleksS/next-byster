@@ -19,24 +19,31 @@ export const Products: FC = (): JSX.Element => {
 
   return (
     <div className={`container ${styles.products}`}>
-      <Text type="h2" up center>
-        <span>Список наших ротаций</span>
-      </Text>
+      <div className={styles.name}>
+        <Text type="h2" up center>
+          Список наших ротаций
+        </Text>
+        <div className={styles.back}>rotation</div>
+      </div>
       <div className={styles.btns}>
         <Button
-          type={"primary2"}
+          type={"choice"}
+          isActive={active === "pvp" ? true : false}
           onClick={() => setActive("pvp")}
-          radius="10px"
         >
           PvP
         </Button>
-        <Button type="primary2" onClick={() => setActive("pve")} radius="10px">
+        <Button
+          type="choice"
+          isActive={active === "pve" ? true : false}
+          onClick={() => setActive("pve")}
+        >
           PvE
         </Button>
         <Button
-          type={"primary2"}
+          type={"choice"}
+          isActive={active === "utility" ? true : false}
           onClick={() => setActive("utility")}
-          radius="10px"
         >
           Utitlity
         </Button>
