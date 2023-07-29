@@ -7,7 +7,7 @@ import { Product } from "@/entities";
 import { useQuery } from "react-query";
 import { getProducts } from "@/widgets/services/products.service";
 import { IProduct } from "@/widgets/interface/products.interface";
-import { dictionary } from "../../../../content";
+import { dictionary } from "../../../../public/content";
 
 export const Products: FC<{ lang: string }> = ({ lang }): JSX.Element => {
   const [active, setActive] = useState<string>("pvp");
