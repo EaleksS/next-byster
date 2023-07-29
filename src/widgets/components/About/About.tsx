@@ -42,7 +42,7 @@ export const About: FC = (): JSX.Element => {
             Удобство
           </span>
           <span className={active === "choose" ? styles.active : ""}>
-            ПОЧЕМУ ВЫБИРАЮТ НАС? 2
+            ПОЧЕМУ ВЫБИРАЮТ НАС?
           </span>
           <span className={active === "anonymity" ? styles.active : ""}>
             Анонимность
