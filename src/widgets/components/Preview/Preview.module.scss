@@ -93,7 +93,9 @@
       z-index: 0;
 
       @media (max-width: 700px) {
-        display: none;
+        left: 0;
+        font-size: 90px;
+        justify-content: center;
       }
     }
 
