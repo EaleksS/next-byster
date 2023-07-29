@@ -7,7 +7,7 @@ import { getPreviews } from "@/widgets/services/previews.service";
 import { useQuery } from "react-query";
 import { IReview } from "@/widgets/interface/reviews.interface";
 import { useRouter } from "next/navigation";
-import { dictionary } from "@/content";
+import { dictionary } from "../../../../content";
 
 export const Reviews: FC<{ lang: string }> = ({ lang }): JSX.Element => {
   const router = useRouter();

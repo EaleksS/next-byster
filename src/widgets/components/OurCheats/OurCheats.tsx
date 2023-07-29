@@ -6,7 +6,7 @@ import { Cheats } from "@/entities";
 import { IoClose } from "react-icons/io5";
 import { useQuery } from "react-query";
 import { getCheats } from "@/widgets/services/cheats.service";
-import { ICheats, IProducts } from "@/widgets/interface/cheats.interface";
+import { ICheats } from "@/widgets/interface/cheats.interface";
 import { Loader } from "@/shared";
 
 interface Props {

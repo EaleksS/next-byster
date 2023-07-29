@@ -4,7 +4,7 @@ import { FC, useState } from "react";
 import styles from "./About.module.scss";
 import { Text } from "@/shared";
 import Image from "next/image";
-import { dictionary } from "@/content";
+import { dictionary } from "../../../../content";
 
 export const About: FC<{ lang: string }> = ({ lang }): JSX.Element => {
   const [active, setActive] = useState<string>("convenience");
