@@ -20,7 +20,7 @@ export default async function RootLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { lang: string };
+  params: { lang: string; lng: string };
 }) {
   console.log(params);
 
