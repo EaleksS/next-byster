@@ -9,9 +9,11 @@ import { IReview } from "@/widgets/interface/reviews.interface";
 import { dictionary } from "../../../dictionaries/content";
 import { SlSocialVkontakte } from "react-icons/sl";
 import Image from "next/image";
+// AOS
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Reviews: FC<{ lang: string }> = ({ lang }): JSX.Element => {
-
   const [fetching, setFetching] = useState(false);
   const [end, setEnd] = useState(20);
 
@@ -31,6 +33,8 @@ export const Reviews: FC<{ lang: string }> = ({ lang }): JSX.Element => {
   }, [fetching, isRefetching]);
 
   useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+
     document.addEventListener("scroll", scrollHandler);
     return function () {
       document.removeEventListener("scroll", scrollHandler);
@@ -64,6 +68,7 @@ export const Reviews: FC<{ lang: string }> = ({ lang }): JSX.Element => {
                 key={index}
                 className={styles.review}
                 onClick={() => window.open(review.url, "_blank")}
+                data-aos="fade-up"
               >
                 <Text type="h3">
                   {review.source === "VK" && review.author}
