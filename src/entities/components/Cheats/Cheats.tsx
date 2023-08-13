@@ -42,10 +42,11 @@ export const Cheats: FC<ICheats> = (props): JSX.Element => {
           type="primary"
           radius="10px"
           onClick={() =>
-            router.push(
+            window.open(
               `https://hacks.byster.one/games/${props.name.toLowerCase()}/${
                 props.products[0].id
-              }`
+              }`,
+              "_blank"
             )
           }
         >

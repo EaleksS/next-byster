@@ -49,7 +49,10 @@ export const Preview: FC<Props> = ({ lang }): JSX.Element => {
           mt="3rem"
           type="primary2"
           onClick={() =>
-            router.push("https://hacks.byster.one/download?ref=google")
+            window.open(
+              "https://hacks.byster.one/download?ref=google",
+              "_blank"
+            )
           }
         >
           {dictionary[lang]?.homeBtn}

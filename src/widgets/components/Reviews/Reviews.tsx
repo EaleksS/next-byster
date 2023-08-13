@@ -6,13 +6,11 @@ import { Loader, Text } from "@/shared";
 import { getPreviews } from "@/widgets/services/previews.service";
 import { useQuery } from "react-query";
 import { IReview } from "@/widgets/interface/reviews.interface";
-import { useRouter } from "next/navigation";
 import { dictionary } from "../../../dictionaries/content";
 import { SlSocialVkontakte } from "react-icons/sl";
 import Image from "next/image";
 
 export const Reviews: FC<{ lang: string }> = ({ lang }): JSX.Element => {
-  const router = useRouter();
 
   const [fetching, setFetching] = useState(false);
   const [end, setEnd] = useState(20);
@@ -65,7 +63,7 @@ export const Reviews: FC<{ lang: string }> = ({ lang }): JSX.Element => {
               <div
                 key={index}
                 className={styles.review}
-                onClick={() => router.push(review.url)}
+                onClick={() => window.open(review.url, "_blank")}
               >
                 <Text type="h3">
                   {review.source === "VK" && review.author}
