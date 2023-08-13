@@ -36,9 +36,9 @@ export const Product: FC<IProduct & { lang: string }> = (
         />
         <div className={styles.content}>
           <Text type="h3" center up>
-            {props.name.length < 12
+            {props.name.length < 23
               ? props.name
-              : `${props.name.slice(0, 12)}...`}
+              : `${props.name.slice(0, 23)}...`}
           </Text>
           <Text type="h3" center up>
             {props.price} P
