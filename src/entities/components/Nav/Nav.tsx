@@ -60,8 +60,16 @@ export const Nav: FC<Props> = ({ lang }): JSX.Element => {
           </LinkScroll>
         </li>
         <li className={styles.icons}>
-          <FaDiscord className={`${styles.icon} ${styles.vk}`} />
-          <FaYoutube className={`${styles.icon} ${styles.yt}`} />
+          <FaDiscord
+            className={`${styles.icon} ${styles.vk}`}
+            onClick={() => window.open("https://discord.gg/byster", "_blank")}
+          />
+          <FaYoutube
+            className={`${styles.icon} ${styles.yt}`}
+            onClick={() =>
+              window.open("https://www.youtube.com/@bysterwow5133", "_blank")
+            }
+          />
         </li>
       </ul>
     </nav>

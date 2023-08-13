@@ -85,10 +85,23 @@ export const BurgerMenu: FC<Props> = ({
               </Link>
             </li>
             <li className={styles.icons} onClick={() => setIsActive(false)}>
-              <FaDiscord className={`${styles.icon} ${styles.vk}`} />
+              <FaDiscord
+                className={`${styles.icon} ${styles.vk}`}
+                onClick={() =>
+                  window.open("https://discord.gg/byster", "_blank")
+                }
+              />
             </li>
             <li className={styles.icons} onClick={() => setIsActive(false)}>
-              <FaYoutube className={`${styles.icon} ${styles.yt}`} />
+              <FaYoutube
+                className={`${styles.icon} ${styles.yt}`}
+                onClick={() =>
+                  window.open(
+                    "https://www.youtube.com/@bysterwow5133",
+                    "_blank"
+                  )
+                }
+              />
             </li>
             <li>
               <div className={styles.lang}>
