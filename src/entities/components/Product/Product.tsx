@@ -67,13 +67,13 @@ export const Product: FC<IProduct & { lang: string }> = (
           </div>
           <div className={styles.content}>
             <Text type="h3">{props.name}</Text>
-            <Text mt="20px">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {props.lang === "ru"
-                  ? props.rotations[0].description
-                  : props.rotations[0].description_en}
-              </ReactMarkdown>
-            </Text>
+
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {props.lang === "ru"
+                ? props.rotations[0].description
+                : props.rotations[0].description_en}
+            </ReactMarkdown>
+
             <div className={styles.price}>
               <Button type="primary" radius="10px">
                 {dictionary[props.lang]?.rotationBtn} {props.price}P
