@@ -6,11 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "postbuild": "next-sitemap"
+    "lint": "next lint"
   },
   "dependencies": {
-    "@formatjs/intl-localematcher": "^0.4.0",
     "@types/node": "20.3.1",
     "@types/react": "18.2.12",
     "@types/react-dom": "18.2.5",
@@ -19,11 +17,9 @@
     "eslint-config-next": "13.4.6",
     "negotiator": "^0.6.3",
     "next": "13.4.6",
-    "next-sitemap": "^4.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.9.0",
-    "react-input-mask": "^2.0.4",
     "react-loader-spinner": "^5.3.4",
     "react-markdown": "^8.0.7",
     "react-query": "^3.39.3",
@@ -36,7 +32,6 @@
   "devDependencies": {
     "@types/negotiator": "^0.6.1",
     "@types/react-icons": "^3.0.0",
-    "@types/react-input-mask": "^3.0.2",
     "@types/react-scroll": "^1.8.7"
   }
 }
