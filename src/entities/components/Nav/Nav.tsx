@@ -3,16 +3,19 @@
 import { Dispatch, FC, SetStateAction } from "react";
 import styles from "./Nav.module.scss";
 import { Text } from "../../../shared";
-import { FaVk, FaYoutube } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 import { Link as LinkScroll } from "react-scroll";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { dictionary } from "@/dictionaries/content";
+import { FaDiscord } from "react-icons/fa";
 
 interface Props {
   setIsActive: Dispatch<SetStateAction<boolean>>;
+  lang: string;
 }
 
-export const Nav: FC<Props> = ({ setIsActive }): JSX.Element => {
+export const Nav: FC<Props> = ({ setIsActive, lang }): JSX.Element => {
   const router = useRouter();
 
   return (
@@ -21,13 +24,13 @@ export const Nav: FC<Props> = ({ setIsActive }): JSX.Element => {
         <li>
           <Link href={"/"}>
             <Text type="h3" fw="600" up>
-              Главная
+              {dictionary[lang]?.main}
             </Text>
           </Link>
         </li>
         <li onClick={() => setIsActive((prev) => !prev)}>
           <Text type="h3" fw="600" up>
-            Наши читы
+            {dictionary[lang]?.ourCheats}
           </Text>
         </li>
         <li>
@@ -37,7 +40,7 @@ export const Nav: FC<Props> = ({ setIsActive }): JSX.Element => {
             onClick={() => router.push("/#about")}
           >
             <Text type="h3" fw="600" up>
-              О нас
+              {dictionary[lang]?.about}
             </Text>
           </LinkScroll>
         </li>
@@ -48,12 +51,12 @@ export const Nav: FC<Props> = ({ setIsActive }): JSX.Element => {
             onClick={() => router.push("/#reviews")}
           >
             <Text type="h3" fw="600" up>
-              Отзывы
+              {dictionary[lang]?.reviewsTitle}
             </Text>
           </LinkScroll>
         </li>
         <li className={styles.icons}>
-          <FaVk className={`${styles.icon} ${styles.vk}`} />
+          <FaDiscord className={`${styles.icon} ${styles.vk}`} />
           <FaYoutube className={`${styles.icon} ${styles.yt}`} />
         </li>
       </ul>

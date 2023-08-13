@@ -17,7 +17,7 @@ export const Header: FC<{ lang: string }> = ({ lang }): JSX.Element => {
     <header className={styles.header}>
       <div className={`${styles.cont}`}>
         <Logo />
-        <Nav setIsActive={setIsActive} />
+        <Nav setIsActive={setIsActive} lang={lang} />
         <BurgerMenu
           isActive={isActiveBurger}
           setIsActiveGame={setIsActive}

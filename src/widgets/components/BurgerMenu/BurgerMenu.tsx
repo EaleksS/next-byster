@@ -3,8 +3,10 @@ import styles from "./BurgerMenu.module.scss";
 import { Modal, Nav } from "../../../entities";
 import { Link } from "react-scroll";
 import { Text } from "@/shared";
-import { FaVk, FaYoutube } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import { dictionary } from "@/dictionaries/content";
+import { FaDiscord } from "react-icons/fa";
 
 interface Props {
   isActive: boolean;
@@ -48,7 +50,7 @@ export const BurgerMenu: FC<Props> = ({
                 onClick={() => setIsActive(false)}
               >
                 <Text type="h3" center fz="18px" fw="600" up>
-                  Главная
+                  {dictionary[lang]?.main}
                 </Text>
               </Link>
             </li>
@@ -59,13 +61,13 @@ export const BurgerMenu: FC<Props> = ({
               }}
             >
               <Text type="h3" center fz="18px" fw="600" up>
-                Наши читы
+                {dictionary[lang]?.ourCheats}
               </Text>
             </li>
             <li>
               <Link to="about" smooth={true} onClick={() => setIsActive(false)}>
                 <Text type="h3" center fz="18px" up>
-                  О нас
+                  {dictionary[lang]?.about}
                 </Text>
               </Link>
             </li>
@@ -76,12 +78,12 @@ export const BurgerMenu: FC<Props> = ({
                 onClick={() => setIsActive(false)}
               >
                 <Text type="h3" center fz="18px" fw="600" up>
-                  Отзывы
+                  {dictionary[lang]?.reviewsTitle}
                 </Text>
               </Link>
             </li>
             <li className={styles.icons} onClick={() => setIsActive(false)}>
-              <FaVk className={`${styles.icon} ${styles.vk}`} />
+              <FaDiscord className={`${styles.icon} ${styles.vk}`} />
             </li>
             <li className={styles.icons} onClick={() => setIsActive(false)}>
               <FaYoutube className={`${styles.icon} ${styles.yt}`} />
