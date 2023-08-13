@@ -9,6 +9,7 @@ import Image from "next/image";
 import { IProduct } from "@/widgets/interface/products.interface";
 import ReactMarkdown from "react-markdown";
 import { dictionary } from "../../../dictionaries/content";
+import remarkGfm from "remark-gfm";
 
 export const Product: FC<IProduct & { lang: string }> = (
   props
@@ -67,7 +68,7 @@ export const Product: FC<IProduct & { lang: string }> = (
           <div className={styles.content}>
             <Text type="h3">{props.name}</Text>
             <Text mt="20px">
-              <ReactMarkdown>
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
                 {props.lang === "ru"
                   ? props.rotations[0].description
                   : props.rotations[0].description_en}

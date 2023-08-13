@@ -45,16 +45,19 @@
       top: 5px;
       left: 5px;
       display: flex;
+      align-items: center;
       gap: 10px;
-      background: rgba($color: #fff, $alpha: 0.0001);
-      backdrop-filter: blur(5px);
+      // background: rgba($color: #fff, $alpha: 0.0001);
+      // backdrop-filter: blur(5px);
       padding: 5px;
       border-radius: 10px;
 
       img {
-        height: 30px;
-        width: 100%;
-        border-radius: 50px;
+        height: 40px;
+        width: 60px;
+        object-fit: cover;
+        background-size: contain;
+        border-radius: 5px;
       }
     }
   }

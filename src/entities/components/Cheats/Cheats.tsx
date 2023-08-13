@@ -14,7 +14,7 @@ export const Cheats: FC<ICheats> = (props): JSX.Element => {
       <div className={styles.bg}>
         <Image src={props.bg_img} alt="product" width={500} height={500} />
         <div className={styles.title}>
-          <Image src={props.logo_img} alt="logo" width={30} height={30} />
+          <Image src={props.logo_img} alt="logo" width={200} height={200} />
           <Text type="h3" up fw="600">
             {props.name}
           </Text>
