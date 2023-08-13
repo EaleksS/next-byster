@@ -3,9 +3,12 @@ import styles from "./Cheats.module.scss";
 import Image from "next/image";
 import { Button, Text } from "@/shared";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import { ICheats, IProducts } from "@/widgets/interface/cheats.interface";
+import { ICheats } from "@/widgets/interface/cheats.interface";
+import { useRouter } from "next/navigation";
 
 export const Cheats: FC<ICheats> = (props): JSX.Element => {
+  const router = useRouter();
+
   return (
     <div className={styles.cheats}>
       <div className={styles.bg}>
@@ -19,7 +22,11 @@ export const Cheats: FC<ICheats> = (props): JSX.Element => {
       </div>
       <div className={styles.content}>
         <div className={styles.detect}>
-          <div className={`${styles.circle} ${props.main_hack_status && styles.detec}`}></div>
+          <div
+            className={`${styles.circle} ${
+              props.main_hack_status && styles.detec
+            }`}
+          ></div>
           {props.main_hack_status ? (
             <Text type="h3" up fw="600" color="#ff4040">
               В детекте
@@ -31,7 +38,17 @@ export const Cheats: FC<ICheats> = (props): JSX.Element => {
           )}
         </div>
         <Text>с {props.main_status_time}</Text>
-        <Button type="primary" radius="10px">
+        <Button
+          type="primary"
+          radius="10px"
+          onClick={() =>
+            router.push(
+              `https://hacks.byster.one/games/${props.name.toLowerCase()}/${
+                props.products[0].id
+              }`
+            )
+          }
+        >
           ПЕРЕЙТИ <HiArrowNarrowRight className={styles.icon} />
         </Button>
       </div>

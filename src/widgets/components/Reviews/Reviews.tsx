@@ -8,6 +8,8 @@ import { useQuery } from "react-query";
 import { IReview } from "@/widgets/interface/reviews.interface";
 import { useRouter } from "next/navigation";
 import { dictionary } from "../../../dictionaries/content";
+import { SlSocialVkontakte } from "react-icons/sl";
+import Image from "next/image";
 
 export const Reviews: FC<{ lang: string }> = ({ lang }): JSX.Element => {
   const router = useRouter();
@@ -65,7 +67,21 @@ export const Reviews: FC<{ lang: string }> = ({ lang }): JSX.Element => {
                 className={styles.review}
                 onClick={() => router.push(review.url)}
               >
-                <Text type="h3">{review.author}</Text>
+                <Text type="h3">
+                  {review.source === "VK" && review.author}
+                  {review.source === "VK" ? (
+                    <SlSocialVkontakte className={styles.social} />
+                  ) : review.source === "FUNPAY" ? (
+                    <Image
+                      src="/logo-funpay.svg"
+                      alt="funpay"
+                      width={70}
+                      height={25}
+                    />
+                  ) : (
+                    review.source
+                  )}
+                </Text>
                 <Text>
                   <span>
                     {new Date(review.review_date * 1000)

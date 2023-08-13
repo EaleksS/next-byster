@@ -48,7 +48,9 @@ export const Preview: FC<Props> = ({ lang }): JSX.Element => {
         <Button
           mt="3rem"
           type="primary2"
-          onClick={() => router.push("/download")}
+          onClick={() =>
+            router.push("https://hacks.byster.one/download?ref=google")
+          }
         >
           {dictionary[lang]?.homeBtn}
         </Button>
