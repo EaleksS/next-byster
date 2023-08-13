@@ -8,7 +8,7 @@ import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
 import { useRouter } from "next/navigation";
 
 export const Header: FC<{ lang: string }> = ({ lang }): JSX.Element => {
-  const [isActive, setIsActive] = useState<boolean>(false);
+  // const [isActive, setIsActive] = useState<boolean>(false);
   const [isActiveBurger, setIsActiveBurger] = useState<boolean>(false);
 
   const router = useRouter();
@@ -17,14 +17,17 @@ export const Header: FC<{ lang: string }> = ({ lang }): JSX.Element => {
     <header className={styles.header}>
       <div className={`${styles.cont}`}>
         <Logo />
-        <Nav setIsActive={setIsActive} lang={lang} />
+        <Nav
+          // setIsActive={setIsActive}
+          lang={lang}
+        />
         <BurgerMenu
           isActive={isActiveBurger}
-          setIsActiveGame={setIsActive}
+          // setIsActiveGame={setIsActive}
           setIsActive={setIsActiveBurger}
           lang={lang}
         />
-        <OurCheats isActive={isActive} setIsActive={setIsActive} />
+        {/* <OurCheats isActive={isActive} setIsActive={setIsActive} /> */}
         <div className={styles.burger}>
           <Burger isActive={isActiveBurger} setIsActive={setIsActiveBurger} />
         </div>

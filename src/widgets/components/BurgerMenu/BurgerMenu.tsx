@@ -11,14 +11,14 @@ import { FaDiscord } from "react-icons/fa";
 interface Props {
   isActive: boolean;
   setIsActive: Dispatch<SetStateAction<boolean>>;
-  setIsActiveGame: Dispatch<SetStateAction<boolean>>;
+  // setIsActiveGame: Dispatch<SetStateAction<boolean>>;
   lang: string;
 }
 
 export const BurgerMenu: FC<Props> = ({
   isActive,
   setIsActive,
-  setIsActiveGame,
+  // setIsActiveGame,
   lang,
 }): JSX.Element => {
   useEffect(() => {
@@ -56,7 +56,9 @@ export const BurgerMenu: FC<Props> = ({
             </li>
             <li
               onClick={() => {
-                setIsActiveGame((prev) => !prev);
+                // setIsActiveGame((prev) => !prev);
+
+                window.open("https://hacks.byster.one/games", "_blank");
                 setIsActive(false);
               }}
             >

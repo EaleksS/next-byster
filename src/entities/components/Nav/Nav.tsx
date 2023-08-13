@@ -11,11 +11,11 @@ import { dictionary } from "@/dictionaries/content";
 import { FaDiscord } from "react-icons/fa";
 
 interface Props {
-  setIsActive: Dispatch<SetStateAction<boolean>>;
+  // setIsActive: Dispatch<SetStateAction<boolean>>;
   lang: string;
 }
 
-export const Nav: FC<Props> = ({ setIsActive, lang }): JSX.Element => {
+export const Nav: FC<Props> = ({ lang }): JSX.Element => {
   const router = useRouter();
 
   return (
@@ -28,7 +28,11 @@ export const Nav: FC<Props> = ({ setIsActive, lang }): JSX.Element => {
             </Text>
           </Link>
         </li>
-        <li onClick={() => setIsActive((prev) => !prev)}>
+        <li
+          onClick={() =>
+            window.open("https://hacks.byster.one/games", "_blank")
+          }
+        >
           <Text type="h3" fw="600" up>
             {dictionary[lang]?.ourCheats}
           </Text>
