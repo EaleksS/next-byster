@@ -141,7 +141,7 @@ export function middleware(request: NextRequest) {
   // // `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
   // // If you have one
   // if (
-  //   [
+  //   [assets
   //     '/manifest.json',
   //     '/favicon.ico',
   //     // Your other files in `public`
@@ -171,5 +171,8 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   // Matcher ignoring `/_next/` and `/api/`
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+  matcher: [
+    "/((?!api|_next/static|_next/image|favicon.ico).*)",
+    "/((?!api|_next|favicon.ico|assets).*)",
+  ],
 };
