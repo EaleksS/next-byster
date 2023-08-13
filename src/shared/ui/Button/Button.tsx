@@ -53,9 +53,9 @@ export const Button: FC<Props> = ({
           style={styleComp}
           onClick={onClick}
         >
-          <div className={styles.content}>
+          <span className={styles.content}>
             <Text type="h3">{children}</Text>
-          </div>
+          </span>
         </button>
       );
 
@@ -66,9 +66,9 @@ export const Button: FC<Props> = ({
           style={styleComp}
           onClick={onClick}
         >
-          <div className={styles.content}>
+          <span className={styles.content}>
             <h2>{children}</h2>
-          </div>
+          </span>
         </button>
       );
 
@@ -81,9 +81,9 @@ export const Button: FC<Props> = ({
           style={styleComp}
           onClick={onClick}
         >
-          <div className={styles.content}>
+          <span className={styles.content}>
             <h2>{children}</h2>
-          </div>
+          </span>
         </button>
       );
 
