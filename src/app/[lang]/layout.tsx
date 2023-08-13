@@ -3,7 +3,7 @@ import "../../styles/globals.css";
 import "../../styles/reset.min.css";
 import localFont from "next/font/local";
 import { ReactQueryProvider } from "@/ReactQueryProvider";
-import { defaultLocale } from "../../middleware";
+import { i18n } from "@/i18-config";
 
 const myFont = localFont({
   src: "../../DIN Next W1G/dinnextw1g.otf",
@@ -16,7 +16,7 @@ export const metadata = {
 };
 
 export async function generateStaticParams() {
-  return [{ lang: "ru" }, { lang: "en" }];
+  return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
 export default async function RootLayout({
@@ -28,7 +28,7 @@ export default async function RootLayout({
 }) {
   return (
     <ReactQueryProvider>
-      <html lang={params.lang ?? defaultLocale}>
+      <html lang={params.lang}>
         <head>
           <link
             rel="apple-touch-icon"
@@ -50,7 +50,7 @@ export default async function RootLayout({
           <link rel="manifest" href="favicon/site.webmanifest" />
         </head>
         <body style={myFont.style}>
-          <Header lang={params.lang ?? defaultLocale} />
+          <Header lang={params.lang} />
           {children}
         </body>
       </html>

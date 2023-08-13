@@ -8,7 +8,7 @@ import { IoClose } from "react-icons/io5";
 import Image from "next/image";
 import { IProduct } from "@/widgets/interface/products.interface";
 import ReactMarkdown from "react-markdown";
-import { dictionary } from "../../../../public/content";
+import { dictionary } from "../../../dictionaries/content";
 
 export const Product: FC<IProduct & { lang: string }> = (
   props

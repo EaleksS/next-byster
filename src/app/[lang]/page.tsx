@@ -1,13 +1,18 @@
-import { defaultLocale } from "@/middleware";
+import { Locale } from "@/i18-config";
+// import { defaultLocale } from "@/middleware";
 import { About, Preview, Products, Reviews } from "@/widgets";
 
-export default function Home({ params }: { params: { lang: string } }) {
+export default function Home({
+  params: { lang },
+}: {
+  params: { lang: Locale };
+}) {
   return (
     <>
-      <Preview lang={params.lang ?? defaultLocale} />
-      <Products lang={params.lang ?? defaultLocale} />
-      <About lang={params.lang ?? defaultLocale} />
-      <Reviews lang={params.lang ?? defaultLocale} />
+      <Preview lang={lang} />
+      <Products lang={lang} />
+      <About lang={lang} />
+      <Reviews lang={lang} />
     </>
   );
 }

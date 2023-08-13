@@ -5,7 +5,8 @@ import styles from "./Preview.module.scss";
 import { Button, Text } from "@/shared";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { dictionary } from "../../../../public/content";
+import { dictionary } from "../../../dictionaries/content";
+import { getDictionary } from "@/get-dictionary";
 
 interface Props {
   lang: string;
