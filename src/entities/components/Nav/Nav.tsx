@@ -23,7 +23,7 @@ export const Nav: FC<Props> = ({ lang }): JSX.Element => {
       <ul className={styles.ul}>
         <li>
           <Link href={"/"}>
-            <Text type="h3" fw="600" up>
+            <Text type="h3" fw="400">
               {dictionary[lang]?.main}
             </Text>
           </Link>
@@ -33,7 +33,7 @@ export const Nav: FC<Props> = ({ lang }): JSX.Element => {
             window.open("https://hacks.byster.one/games", "_blank")
           }
         >
-          <Text type="h3" fw="600" up>
+          <Text type="h3" fw="400">
             {dictionary[lang]?.ourCheats}
           </Text>
         </li>
@@ -43,7 +43,7 @@ export const Nav: FC<Props> = ({ lang }): JSX.Element => {
             smooth={true}
             onClick={() => router.push("/#about")}
           >
-            <Text type="h3" fw="600" up>
+            <Text type="h3" fw="400">
               {dictionary[lang]?.about}
             </Text>
           </LinkScroll>
@@ -54,7 +54,7 @@ export const Nav: FC<Props> = ({ lang }): JSX.Element => {
             smooth={true}
             onClick={() => router.push("/#reviews")}
           >
-            <Text type="h3" fw="600" up>
+            <Text type="h3" fw="400">
               {dictionary[lang]?.reviewsTitle}
             </Text>
           </LinkScroll>
