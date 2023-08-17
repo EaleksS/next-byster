@@ -9,65 +9,65 @@ import { dictionary } from "../../../dictionaries/content";
 import { getDictionary } from "@/get-dictionary";
 
 interface Props {
-  lang: string;
+	lang: string;
 }
 
 export const Preview: FC<Props> = ({ lang }): JSX.Element => {
-  const img1 = useRef<HTMLImageElement>(null);
+	const img1 = useRef<HTMLImageElement>(null);
 
-  const router = useRouter();
+	const router = useRouter();
 
-  const parallax = (e: MouseEvent) => {
-    if (!img1.current) return;
+	const parallax = (e: MouseEvent) => {
+		if (!img1.current) return;
 
-    const x1 = e.clientX / 1000;
-    const y1 = e.clientY / 500;
+		const x1 = e.clientX / 1000;
+		const y1 = e.clientY / 500;
 
-    img1.current.style.transform = `translateX(${x1}rem) translateY(${y1}rem)`;
-  };
+		img1.current.style.transform = `translateX(${x1}rem) translateY(${y1}rem)`;
+	};
 
-  useEffect(() => {
-    document.addEventListener("mousemove", parallax);
+	useEffect(() => {
+		document.addEventListener("mousemove", parallax);
 
-    return () => document.removeEventListener("mousemove", parallax);
-  }, []);
+		return () => document.removeEventListener("mousemove", parallax);
+	}, []);
 
-  return (
-    <div className={`${styles.preview} container`}>
-      <div className={styles.title}>
-        <div className={styles.name}>
-          <Text type="h1" up>
-            {dictionary[lang]?.homeTitle}
-          </Text>
-          <div className={styles.back}>Byster</div>
-        </div>
-        <Text mt="2rem" fz="18px">
-          {dictionary[lang]?.homeText}
-        </Text>
+	return (
+		<div className={`${styles.preview} container`}>
+			<div className={styles.title}>
+				<div className={styles.name}>
+					<Text type="h1" up>
+						{dictionary[lang]?.homeTitle}
+					</Text>
+					<div className={styles.back}>Byster</div>
+				</div>
+				<Text mt="2rem" fz="18px">
+					{dictionary[lang]?.homeText}
+				</Text>
 
-        <Button
-          mt="3rem"
-          type="primary2"
-          onClick={() =>
-            window.open(
-              "https://hacks.byster.one/download?ref=google",
-              "_blank"
-            )
-          }
-        >
-          {dictionary[lang]?.homeBtn}
-        </Button>
-      </div>
-      <div className={styles.img}>
-        <Image
-          ref={img1}
-          priority
-          src="/pre.png"
-          alt="img"
-          width={600}
-          height={600}
-        />
-      </div>
-    </div>
-  );
+				<Button
+					mt="3rem"
+					type="primary2"
+					onClick={() =>
+						window.open(
+							`https://bysterv2.vercel.app/${lang}/download`,
+							"_blank"
+						)
+					}
+				>
+					{dictionary[lang]?.homeBtn}
+				</Button>
+			</div>
+			<div className={styles.img}>
+				<Image
+					ref={img1}
+					priority
+					src="/pre.png"
+					alt="img"
+					width={600}
+					height={600}
+				/>
+			</div>
+		</div>
+	);
 };
