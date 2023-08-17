@@ -4,10 +4,10 @@ import { FC, useState } from "react";
 import styles from "./Products.module.scss";
 import { Button, Loader, Text } from "@/shared";
 import { Product } from "@/entities";
-import { useQuery } from "react-query";
 import { getProducts } from "@/widgets/services/products.service";
 import { IProduct } from "@/widgets/interface/products.interface";
 import { dictionary } from "../../../dictionaries/content";
+import { useQuery } from "@tanstack/react-query";
 
 export const Products: FC<{ lang: string }> = ({ lang }): JSX.Element => {
   const [active, setActive] = useState<string>("pvp");
