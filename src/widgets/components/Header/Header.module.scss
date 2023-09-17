@@ -1,67 +1,71 @@
 .header {
-  // background: rgba($color: #333, $alpha: 0.1);
-  position: relative;
-  z-index: 3;
-  transition: all 0.2s ease-in-out;
+	// background: rgba($color: #333, $alpha: 0.1);
+	position: relative;
+	z-index: 3;
+	transition: all 0.2s ease-in-out;
 
-  @media (max-width: 1200px) {
-    padding: 0 10px;
-  }
+	@media (max-width: 1200px) {
+		padding: 0 10px;
+	}
 
-  .cont {
-    display: grid;
-    grid-template-columns: 100px 1fr 100px;
-    align-items: center;
-    height: 100px;
+	&.dsnone {
+		display: none;
+	}
 
-    max-width: 1500px;
-    margin: 0 auto;
-  }
+	.cont {
+		display: grid;
+		grid-template-columns: 100px 1fr 100px;
+		align-items: center;
+		height: 100px;
+
+		max-width: 1500px;
+		margin: 0 auto;
+	}
 }
 
 .lang {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 3;
-  border: 1px solid rgba($color: #fff, $alpha: 0.7);
-  height: 40px;
-  border-radius: 10px;
-  gap: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	z-index: 3;
+	border: 1px solid rgba($color: #fff, $alpha: 0.7);
+	height: 40px;
+	border-radius: 10px;
+	gap: 5px;
 
-  span {
-    font-weight: bold;
-    cursor: pointer;
+	span {
+		font-weight: bold;
+		cursor: pointer;
 
-    &.active {
-      background: #fdbc2f;
-      background: linear-gradient(to right, #fdbc2f 0%, #f87b6a 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+		&.active {
+			background: #fdbc2f;
+			background: linear-gradient(to right, #fdbc2f 0%, #f87b6a 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
 
-    @media (min-width: 800px) {
-      transform: all 0.2s ease-in-out;
+		@media (min-width: 800px) {
+			transform: all 0.2s ease-in-out;
 
-      &:hover {
-        opacity: 0.9;
-      }
-    }
-  }
+			&:hover {
+				opacity: 0.9;
+			}
+		}
+	}
 
-  @media (max-width: 1200px) {
-    display: none;
-  }
+	@media (max-width: 1200px) {
+		display: none;
+	}
 }
 
 .burger {
-  display: none;
-  justify-content: flex-end;
-  position: relative;
-  z-index: 3;
+	display: none;
+	justify-content: flex-end;
+	position: relative;
+	z-index: 3;
 
-  @media (max-width: 1200px) {
-    display: flex;
-  }
+	@media (max-width: 1200px) {
+		display: flex;
+	}
 }

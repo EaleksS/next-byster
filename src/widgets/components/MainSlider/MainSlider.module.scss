@@ -1,0 +1,53 @@
+.main_slider {
+	margin-top: 100px !important;
+	background: rgba($color: #090f11, $alpha: 0.5);
+	position: relative;
+	border-radius: 10px;
+	max-width: 1200px;
+	margin: 0 auto;
+
+	.my_swiper {
+		height: 600px;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 10px;
+		right: 10px;
+		height: 1px;
+		background-image: linear-gradient(
+			to right,
+			transparent,
+			#878787,
+			#b9b9b9,
+			#b9b9b9,
+			#b9b9b9,
+			#b9b9b9,
+			#878787,
+			transparent
+		);
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 10px;
+		right: 10px;
+		height: 1px;
+		background-image: linear-gradient(
+			to right,
+			transparent,
+			#878787,
+			#b9b9b9,
+			#b9b9b9,
+			#b9b9b9,
+			#b9b9b9,
+			#878787,
+			transparent
+		);
+	}
+}
+

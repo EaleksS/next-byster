@@ -6,9 +6,10 @@ import { Text } from "../../../shared";
 import { FaYoutube } from "react-icons/fa";
 import { Link as LinkScroll } from "react-scroll";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { dictionary } from "@/dictionaries/content";
 import { FaDiscord } from "react-icons/fa";
+import { SiTelegram, SiVk } from "react-icons/si";
 
 interface Props {
 	// setIsActive: Dispatch<SetStateAction<boolean>>;
@@ -17,42 +18,48 @@ interface Props {
 
 export const Nav: FC<Props> = ({ lang }): JSX.Element => {
 	const router = useRouter();
+	const pathname = usePathname();
 
 	return (
 		<nav className={styles.nav}>
 			<ul className={styles.ul}>
 				<li>
-					<Link href={"/"}>
+					<Link href={`/${lang}/`}>
 						<Text type="h3" fw="600" up>
 							{dictionary[lang]?.main}
 						</Text>
 					</Link>
 				</li>
-				<li
-					onClick={() =>
-						window.open(`https://bysterv2.vercel.app/${lang}/games`, "_blank")
-					}
-				>
-					<Text type="h3" fw="600" up>
-						{dictionary[lang]?.ourCheats}
-					</Text>
+				<li>
+					<Link href={`/${lang}/games`}>
+						<Text type="h3" fw="600" up>
+							{dictionary[lang]?.ourCheats}
+						</Text>
+					</Link>
 				</li>
 				<li>
-					<LinkScroll
-						to="about"
-						smooth={true}
-						onClick={() => router.push("/#about")}
+					<Link
+						href={
+							pathname.includes("wow")
+								? `/${lang}/wow/download`
+								: `/${lang}/download`
+						}
 					>
 						<Text type="h3" fw="600" up>
-							{dictionary[lang]?.about}
+							{dictionary[lang]?.download}
 						</Text>
-					</LinkScroll>
+					</Link>
 				</li>
 				<li>
 					<LinkScroll
 						to="reviews"
 						smooth={true}
-						onClick={() => router.push("/#reviews")}
+						onClick={() => {
+							if (pathname === `/${lang}/wow`)
+								return router.push(`/${lang}/wow/#reviews`);
+
+							return router.push(`/${lang}/#reviews`);
+						}}
 					>
 						<Text type="h3" fw="600" up>
 							{dictionary[lang]?.reviewsTitle}
@@ -70,6 +77,18 @@ export const Nav: FC<Props> = ({ lang }): JSX.Element => {
 							window.open("https://www.youtube.com/@bysterwow5133", "_blank")
 						}
 					/>
+					<SiTelegram
+						className={`${styles.icon} ${styles.tg}`}
+						onClick={() =>
+							window.open("https://t.me/+_Mq5a1vthp85ZmQy", "_blank")
+						}
+					/>
+					{pathname.includes("wow") && (
+						<SiVk
+							className={`${styles.icon} ${styles.tg}`}
+							onClick={() => window.open("https://vk.com/byster_wow", "_blank")}
+						/>
+					)}
 				</li>
 			</ul>
 		</nav>

@@ -4,6 +4,7 @@ import { FC, useEffect, useState } from "react";
 import styles from "./Reviews.module.scss";
 import { Loader, Text } from "@/shared";
 import { getPreviews } from "@/widgets/services/previews.service";
+import { useQuery } from "@tanstack/react-query";
 import { IReview } from "@/widgets/interface/reviews.interface";
 import { dictionary } from "../../../dictionaries/content";
 import { SlSocialVkontakte } from "react-icons/sl";
@@ -11,7 +12,6 @@ import Image from "next/image";
 // AOS
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useQuery } from "@tanstack/react-query";
 
 export const Reviews: FC<{ lang: string }> = ({ lang }): JSX.Element => {
 	const [fetching, setFetching] = useState(false);
@@ -87,10 +87,7 @@ export const Reviews: FC<{ lang: string }> = ({ lang }): JSX.Element => {
 								</Text>
 								<Text>
 									<span>
-										{new Date(review.review_date * 1000)
-											.toLocaleDateString("en-US")
-											.replace("/", ".")
-											.replace("/", ".")}
+										{new Date(review.review_date * 1000).toLocaleDateString()}
 									</span>
 								</Text>
 								<Text mt="20px">{review.text}</Text>

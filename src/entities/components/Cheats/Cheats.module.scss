@@ -1,152 +1,152 @@
 .cheats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  background: #090d0f;
-  border-radius: 10px;
-  padding: 1rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+	background: #090d0f;
+	border-radius: 10px;
+	padding: 1rem;
 
-  @media (max-width: 900px) {
-    width: calc(100% - 31px);
-  }
+	@media (max-width: 900px) {
+		width: calc(100% - 31px);
+	}
 
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr;
-  }
+	@media (max-width: 900px) {
+		grid-template-columns: 1fr;
+	}
 
-  @media (min-width: 600px) {
-    &:hover {
-      .bg {
-        img {
-          transform: scale(1.05);
-        }
-      }
-    }
-  }
+	@media (min-width: 600px) {
+		&:hover {
+			.bg {
+				img {
+					transform: scale(1.05);
+				}
+			}
+		}
+	}
 
-  .bg {
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
+	.bg {
+		border-radius: 10px;
+		overflow: hidden;
+		position: relative;
 
-    img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      transition: all 0.3s ease-in-out;
+		img {
+			width: 100%;
+			height: 250px;
+			object-fit: cover;
+			transition: all 0.3s ease-in-out;
 
-      @media (max-width: 900px) {
-        height: 100%;
-      }
-    }
+			@media (max-width: 900px) {
+				height: 100%;
+			}
+		}
 
-    .title {
-      position: absolute;
-      top: 5px;
-      left: 5px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      // background: rgba($color: #fff, $alpha: 0.0001);
-      // backdrop-filter: blur(5px);
-      padding: 5px;
-      border-radius: 10px;
+		.title {
+			position: absolute;
+			top: 5px;
+			left: 5px;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			// background: rgba($color: #fff, $alpha: 0.0001);
+			// backdrop-filter: blur(5px);
+			padding: 5px;
+			border-radius: 10px;
 
-      img {
-        height: 40px;
-        width: 60px;
-        object-fit: cover;
-        background-size: contain;
-        border-radius: 5px;
-      }
-    }
-  }
+			img {
+				height: 40px;
+				width: auto;
+				object-fit: cover;
+				background-size: contain;
+				border-radius: 5px;
+			}
+		}
+	}
 
-  .content {
-    position: relative;
+	.content {
+		position: relative;
 
-    .detect {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
+		.detect {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
 
-      .circle {
-        width: 15px;
-        height: 15px;
-        background: #19e619;
-        transform: scale(1);
-        border-radius: 50%;
-        animation: glowing 1300ms infinite;
-        transition: all 0.2s ease-in-out;
+			.circle {
+				width: 15px;
+				height: 15px;
+				background: #19e619;
+				transform: scale(1);
+				border-radius: 50%;
+				animation: glowing 1300ms infinite;
+				transition: all 0.2s ease-in-out;
 
-        &.detec {
-          background: #ff4040;
-          animation: glowingred 1300ms infinite;
-        }
-      }
+				&.detec {
+					background: #ff4040;
+					animation: glowingred 1300ms infinite;
+				}
+			}
 
-      h3 {
-        color: #19e619;
-      }
-    }
+			h3 {
+				color: #19e619;
+			}
+		}
 
-    button {
-      position: absolute;
-      bottom: 0;
-      width: 150px;
-      right: 0;
+		button {
+			position: absolute;
+			bottom: 0;
+			width: 150px;
+			right: 0;
 
-      @media (min-width: 600px) {
-        &:hover {
-          h3 {
-            .icon {
-              transform: translateX(5px);
-            }
-          }
-        }
-      }
+			@media (min-width: 600px) {
+				&:hover {
+					h3 {
+						.icon {
+							transform: translateX(5px);
+						}
+					}
+				}
+			}
 
-      h3 {
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
+			h3 {
+				font-weight: 700;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 5px;
 
-        .icon {
-          transition: all 0.2s ease-in-out;
-        }
-      }
-    }
-  }
+				.icon {
+					transition: all 0.2s ease-in-out;
+				}
+			}
+		}
+	}
 }
 
 @keyframes glowing {
-  0% {
-    background: rgba($color: #19e619, $alpha: 1);
-    transform: scale(1);
-  }
-  50% {
-    background: rgba($color: #19e619, $alpha: 0.5);
-    transform: scale(1.2);
-  }
-  100% {
-    background: rgba($color: #19e619, $alpha: 1);
-    transform: scale(1);
-  }
+	0% {
+		background: rgba($color: #19e619, $alpha: 1);
+		transform: scale(1);
+	}
+	50% {
+		background: rgba($color: #19e619, $alpha: 0.5);
+		transform: scale(1.2);
+	}
+	100% {
+		background: rgba($color: #19e619, $alpha: 1);
+		transform: scale(1);
+	}
 }
 
 @keyframes glowingred {
-  0% {
-    background: rgba($color: #ff4040, $alpha: 1);
-    transform: scale(1);
-  }
-  50% {
-    background: rgba($color: #ff4040, $alpha: 0.5);
-    transform: scale(1.2);
-  }
-  100% {
-    background: rgba($color: #ff4040, $alpha: 1);
-    transform: scale(1);
-  }
+	0% {
+		background: rgba($color: #ff4040, $alpha: 1);
+		transform: scale(1);
+	}
+	50% {
+		background: rgba($color: #ff4040, $alpha: 0.5);
+		transform: scale(1.2);
+	}
+	100% {
+		background: rgba($color: #ff4040, $alpha: 1);
+		transform: scale(1);
+	}
 }

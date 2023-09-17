@@ -48,12 +48,7 @@ export const Preview: FC<Props> = ({ lang }): JSX.Element => {
 				<Button
 					mt="3rem"
 					type="primary2"
-					onClick={() =>
-						window.open(
-							`https://bysterv2.vercel.app/${lang}/download`,
-							"_blank"
-						)
-					}
+					onClick={() => router.push(`/${lang}/wow/download`)}
 				>
 					{dictionary[lang]?.homeBtn}
 				</Button>

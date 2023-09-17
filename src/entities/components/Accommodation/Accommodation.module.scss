@@ -1,0 +1,42 @@
+.accommodation {
+	display: grid;
+	grid-template-columns: 1.5fr 1fr;
+
+	@media (max-width: 700px) {
+		grid-template-columns: 1fr;
+	}
+
+	.title {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 500px;
+		padding: 20px;
+
+		h1 {
+			color: #ea8d41;
+		}
+
+		p {
+			font-size: 20px;
+			line-height: 25px;
+		}
+
+		@media (max-width: 700px) {
+			p {
+				font-size: 14px;
+				line-height: 16px;
+			}
+		}
+	}
+
+	.slider_img {
+		// max-width: 250px;
+		margin: 0 auto;
+
+		@media (max-width: 700px) {
+			display: none;
+		}
+	}
+}

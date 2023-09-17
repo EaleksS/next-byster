@@ -1,0 +1,38 @@
+.list {
+	margin-top: 100px !important;
+
+	.to {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		gap: 0.5rem;
+		text-decoration: none;
+		color: #fff;
+
+		&:hover {
+			.icon {
+				transform: translateX(5px);
+			}
+		}
+
+		.icon {
+			transition: all 0.2s ease-in-out;
+		}
+	}
+
+	.items {
+		margin-top: 20px;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 1rem;
+
+		@media (max-width: 1200px) {
+			// grid-template-columns: 1fr 1fr;
+		}
+
+		@media (max-width: 800px) {
+			// grid-template-columns: 1fr;
+		}
+	}
+}

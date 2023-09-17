@@ -1,10 +1,20 @@
 .mySwiper {
-  height: 150px !important;
+	// height: 250px !important;
+
+	// @media (max-width: 400px) {
+	// 	height: 150px !important;
+	// }
+
+	width: 100%;
+	// max-height: calc(16 / 9 * 200px);
+	height: auto;
+	// height: auto;
+	border-radius: 8px;
 }
 
 .swiper {
-  width: 100%;
-  height: 100%;
+	height: 100%;
+	width: 100%;
 }
 
 // .swiper-slide img {
@@ -21,87 +31,175 @@
 //   gap: 10px;
 // }
 
+.swiper-pagination {
+	pointer-events: none !important;
+}
+
+.swiper-pagination-bullet {
+	width: 15px !important;
+	height: 15px !important;
+	border-radius: 50% !important;
+	background-color: #2e454d !important;
+	opacity: 1 !important;
+}
+
 .swiper-pagination-bullet-active {
-  background: #fff !important;
+	width: 100px !important;
+	border-radius: 10px !important;
+	background-color: #2e454d !important;
 }
 
 .slider-wrapper {
-  position: relative;
+	position: relative;
 }
 
 .img-slider {
-  display: block;
-  height: 100%;
-  width: 100%;
-  padding: 0 5px;
+	position: relative;
+	cursor: pointer;
 
-  img {
-    width: calc(100% - 10px);
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-  }
+	&::after {
+		display: block;
+		content: "";
+		/* 16:9 aspect ratio */
+		padding-bottom: 56.25%;
+	}
+
+	&.video {
+		&::before {
+			position: absolute;
+			content: "";
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			background: url("/play-button2.png"), rgba($color: #000000, $alpha: 0.5);
+			border-radius: 10px;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 70px;
+			z-index: 20;
+		}
+	}
+
+	img,
+	iframe {
+		// width: 100%;
+		// max-height: calc(16 / 9 * 200px);
+		// object-fit: cover;
+		border-radius: 10px;
+		// background: #000;
+
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+
+		video {
+			border-radius: 10px;
+		}
+	}
 }
 
 .prev,
 .next {
-  position: absolute;
-  top: calc(50% - 20px);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 40px;
-  color: #fff;
-  cursor: pointer;
+	position: absolute;
+	top: calc(50% - 20px);
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	z-index: 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 40px;
+	color: #fff;
+	cursor: pointer;
 
-  // @media (max-width: 1200px) {
-  //   height: 70px;
-  //   width: 70px;
-  // }
+	// @media (max-width: 1200px) {
+	//   height: 70px;
+	//   width: 70px;
+	// }
 
-  @media (max-width: 800px) {
-    display: none;
-  }
+	@media (max-width: 800px) {
+		display: none;
+	}
 
-  &:active {
-    transform: scale(0.95);
-  }
+	&:active {
+		transform: scale(0.95);
+	}
 
-  .arrow_prev,
-  .arrow_next {
-    transition: all 0.2s ease-in-out;
-  }
+	.arrow_prev,
+	.arrow_next {
+		transition: all 0.2s ease-in-out;
+	}
 
-  .arrow_prev {
-    transform: rotate(180deg);
-  }
+	.arrow_prev {
+		transform: rotate(180deg);
+	}
 
-  &:hover {
-    .arrow_prev {
-      transform: rotate(180deg) translateX(-5px);
-    }
-    .arrow_next {
-      transform: translateX(5px);
-    }
-  }
+	&:hover {
+		.arrow_prev {
+			transform: rotate(180deg) translateX(-5px);
+		}
+		.arrow_next {
+			transform: translateX(5px);
+		}
+	}
 }
 
 .prev {
-  left: -50px;
+	left: -50px;
 
-  @media (max-width: 1200px) {
-    left: -35px;
-  }
+	@media (max-width: 1200px) {
+		left: -35px;
+	}
 }
 
 .next {
-  right: -50px;
+	right: -50px;
 
-  @media (max-width: 1200px) {
-    right: -35px;
-  }
+	@media (max-width: 1200px) {
+		right: -35px;
+	}
+}
+
+.slide_next__button,
+.slide_prev__button {
+	width: 40px;
+	height: 40px;
+	align-self: center;
+	cursor: pointer;
+	background-color: transparent;
+	border-radius: 0;
+	border: none;
+	opacity: 0.75;
+
+	position: absolute;
+	top: 50%;
+
+	z-index: 5;
+
+	@media (max-width: 1410px) {
+		display: none;
+	}
+}
+
+.slide_next__button:hover,
+.slide_prev__button:hover {
+	opacity: 1;
+}
+
+.slide_next__button {
+	right: -100px;
+}
+
+.slide_prev__button {
+	left: -100px;
+}
+
+.slide_next__button img,
+.slide_prev__button img {
+	width: 30px;
+	height: auto;
 }
